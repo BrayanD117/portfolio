@@ -1,0 +1,12 @@
+.custom-typewriter {
+    font-family: 'Fira Code', monospace;
+    font-weight: bold;
+    color: #4A90E2;
+  }
+  
+  .Typewriter__cursor {
+    font-family: 'Fira Code', monospace;
+    color: #4A90E2;
+    font-size: 1.2rem;
+  }
+  

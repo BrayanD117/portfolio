@@ -1,28 +1,51 @@
 ---
+import Typewriter from 'typewriter-effect';
+import '../components/styles/HomeSection.css';
 ---
-<section class="bg-gradient-to-br from-blue-500 to-indigo-600 text-white min-h-screen flex items-center">
-    <div class="container mx-auto px-6 sm:px-12 flex flex-col-reverse md:flex-row items-center justify-between">
-      <div class="text-center md:text-left space-y-6">
-        <h1 class="text-4xl sm:text-5xl font-bold">
-          ¡Hola! Soy <span class="text-yellow-300">Brayan</span>
-        </h1>
-        <p class="text-lg sm:text-xl max-w-xl">
-          Soy un desarrollador de software apasionado por crear soluciones modernas y de alto impacto.
-        </p>
-        <div class="flex space-x-4 justify-center md:justify-start">
-          <a href="#proyectos" class="bg-yellow-300 text-black px-6 py-2 rounded-lg hover:bg-yellow-400">
-            Ver Proyectos
-          </a>
-          <a href="#contacto" class="bg-transparent border border-white px-6 py-2 rounded-lg hover:bg-white hover:text-black">
-            Contáctame
-          </a>
-        </div>
-      </div>
-  
-      <!-- Imagen o ilustración -->
-      <div class="w-full md:w-1/2">
-        <img src="/path-to-your-image.png" alt="Imagen personal" class="rounded-full mx-auto md:mx-0 shadow-lg max-w-xs sm:max-w-sm md:max-w-md" />
+
+<section class="bg-gradient-to-br from-gray-800 to-gray-900 text-white min-h-screen flex items-center">
+  <div class="container mx-auto px-6 sm:px-12 flex flex-col-reverse md:flex-row items-center justify-between">
+    <div class="text-center md:text-left space-y-6">
+      <h1 class="text-4xl sm:text-5xl font-bold">
+        ¡Hola! Soy <span class="text-blue-400">Brayan</span>
+      </h1>
+      <p class="text-lg sm:text-xl max-w-xl">
+        Soy un desarrollador de software apasionado por{' '}
+        <span class="text-blue-400 custom-typewriter">
+          <Typewriter
+            client:only
+            options={{
+              strings: [
+                'innovar con tecnología avanzada',
+                'resolver desafíos complejos',
+                'construir plataformas confiables',
+                'desarrollar aplicaciones de alto rendimiento',
+                'diseñar soluciones a medida'
+              ],
+              autoStart: true,
+              loop: true,
+              delay: 50,
+              deleteSpeed: 20,
+            }}
+          />
+        </span>
+      </p>
+      <div class="flex space-x-4 justify-center md:justify-start">
+        <a href="#proyectos" class="bg-blue-500 text-white px-6 py-2 rounded-lg hover:bg-blue-600">
+          Ver Proyectos
+        </a>
+        <a href="#contacto" class="bg-transparent border border-gray-300 px-6 py-2 rounded-lg text-gray-300 hover:bg-gray-300 hover:text-gray-900">
+          Contáctame
+        </a>
       </div>
     </div>
-  </section>
-  
+
+    <div class="w-full md:w-1/2 flex justify-center">
+      <img
+        src="/images/photo.webp"
+        alt="Imagen personal"
+        class="rounded-full shadow-lg max-w-[200px] sm:max-w-[300px] md:max-w-[350px] lg:max-w-[400px] border border-gray-700"
+      />
+    </div>
+  </div>
+</section>
