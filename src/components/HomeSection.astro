@@ -1,4 +1,6 @@
 ---
+import { Image } from 'astro:assets';
+import personalPhoto from '../../public/images/photo.webp';
 import Typewriter from 'typewriter-effect';
 import '../components/styles/HomeSection.css';
 ---
@@ -41,10 +43,11 @@ import '../components/styles/HomeSection.css';
     </div>
 
     <div class="w-full md:w-1/2 flex justify-center">
-      <img
-        src="/images/photo.webp"
-        alt="Imagen personal"
+      <Image 
+        src={personalPhoto} 
+        alt="Imagen personal" 
         class="rounded-full shadow-lg max-w-[200px] sm:max-w-[300px] md:max-w-[350px] lg:max-w-[400px] border border-gray-700"
+        loading="eager" 
       />
     </div>
   </div>
