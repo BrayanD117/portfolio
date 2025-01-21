@@ -1,3 +1,7 @@
+---
+import Carousel from '../components/Carousel/Carousel.astro';
+---
+
 <section class="bg-gray-100 text-gray-800 py-16">
     <div class="container mx-auto px-6 sm:px-12 space-y-12">
       <div class="text-center">
@@ -23,13 +27,8 @@
           </div>
           <a href="#detalles" class="inline-block text-blue-500 hover:text-blue-600 font-medium mt-4">Ver más detalles →</a>
         </div>
-  
         <div class="md:w-1/2 flex justify-center">
-          <img
-            src="/images/miro.webp"
-            alt="MIRÓ Proyecto"
-            class="rounded-lg shadow-lg max-w-full border border-gray-300"
-          />
+          <Carousel/>
         </div>
       </div>
   
