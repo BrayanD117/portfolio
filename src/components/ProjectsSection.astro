@@ -1,5 +1,35 @@
 ---
 import Carousel from '../components/Carousel/Carousel.astro';
+
+const miroImages = [
+  {
+    src: "/images/miro/slide1.webp",
+    alt: "MIRÓ Dashboard"
+  },
+  {
+    src: "/images/miro/slide2.webp",
+    alt: "MIRÓ Estadísticas"
+  },
+  {
+    src: "/images/miro/slide3.webp",
+    alt: "MIRÓ Reportes"
+  }
+];
+
+const femseaptoImages = [
+  {
+    src: "/images/femseapto/slide1.webp",
+    alt: "FEMSEAPTO Portal"
+  },
+  {
+    src: "/images/femseapto/slide2.webp",
+    alt: "FEMSEAPTO Dashboard"
+  },
+  {
+    src: "/images/femseapto/slide3.webp",
+    alt: "FEMSEAPTO Servicios"
+  }
+];
 ---
 
 <section class="bg-gray-100 text-gray-800 py-16">
@@ -28,7 +58,11 @@ import Carousel from '../components/Carousel/Carousel.astro';
           <a href="#detalles" class="inline-block text-blue-500 hover:text-blue-600 font-medium mt-4">Ver más detalles →</a>
         </div>
         <div class="md:w-1/2 flex justify-center">
-          <Carousel/>
+          <Carousel 
+            images={miroImages}
+            height="350px"
+            autoplayDelay={4000}
+          />
         </div>
       </div>
   
@@ -51,12 +85,12 @@ import Carousel from '../components/Carousel/Carousel.astro';
           </a>
         </div>
   
-        <div class="md:w-1/2 flex justify-center">
-          <img
-            src="/images/femseapto.webp"
-            alt="FEMSEAPTO Proyecto"
-            class="rounded-lg shadow-lg max-w-full border border-gray-300"
-          />
+        <div class="md:w-1/2 flex justify-center mr-5">
+          <Carousel 
+              images={femseaptoImages}
+              height="400px"
+              autoplayDelay={3000}
+            />
         </div>
       </div>
     </div>
