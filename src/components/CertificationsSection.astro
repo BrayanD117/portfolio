@@ -1,27 +1,175 @@
-<section id="certificaciones" class="bg-gray-50 text-gray-800 py-16">
-    <div class="container mx-auto px-6 sm:px-12">
-      <h2 class="text-4xl font-bold text-center">Certificaciones</h2>
-      <p class="mt-4 text-lg text-gray-600 text-center">
-        Estos son algunos de los certificados que he obtenido.
-      </p>
-  
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mt-12">
-        <div class="bg-white rounded-lg shadow p-6">
-          <img src="/images/cert.webp" alt="Cert 1" class="w-full rounded mb-4">
-          <h3 class="text-2xl font-bold">Cert 1</h3>
-          <p class="text-gray-600 mt-2">Cert 1</p>
-          <a 
-            href="/certificates/Cert 1.pdf" 
-            target="_blank" 
-            rel="noopener noreferrer" 
-            class="text-blue-500 hover:underline mt-4 block"
-          >
-            Ver Certificado →
-          </a>
-        </div>
-  
-        
+---
+const certificates = [
+  {
+    category: "JavaScript",
+    name: "Asincronismo con JavaScript",
+    provider: "Platzi",
+    pdf: "/certificates/asincronismo-js.pdf"
+  },
+  {
+    category: "Cloud & Data",
+    name: "AWS Academy Cloud Foundations",
+    provider: "AWS",
+    pdf: "/certificates/aws.pdf"
+  },
+  {
+    category: "JavaScript",
+    name: "Básico de JavaScript",
+    provider: "Platzi",
+    pdf: "/certificates/basico-javascript.pdf"
+  },
+  {
+    category: "JavaScript",
+    name: "Fundamentos de JavaScript",
+    provider: "Platzi",
+    pdf: "/certificates/javascript-fundamentos.pdf"
+  },
+  {
+    category: "Java",
+    name: "Java Básico",
+    provider: "Platzi",
+    pdf: "/certificates/java-basico.pdf"
+  },
+  {
+    category: "Desarrollo Web",
+    name: "Práctico de Frontend Developer",
+    provider: "Platzi",
+    pdf: "/certificates/frontend-developer-practico.pdf"
+  },
+  {
+    category: "Desarrollo Web",
+    name: "Profesional de Git y GitHub",
+    provider: "Platzi",
+    pdf: "/certificates/git-github.pdf"
+  },
+  {
+    category: "Desarrollo Web",
+    name: "Definitivo de HTML y CSS",
+    provider: "Platzi",
+    pdf: "/certificates/html-css.pdf"
+  },
+  {
+    category: "Redes y Seguridad",
+    name: "Introduction to Cybersecurity",
+    provider: "Cisco",
+    pdf: "/certificates/cybersecurity.pdf"
+  },
+  {
+    category: "Redes y Seguridad",
+    name: "Networks Basics",
+    provider: "Cisco",
+    pdf: "/certificates/networks.pdf"
+  },
+  {
+    category: "Cloud & Data",
+    name: "Power BI",
+    provider: "Microsoft - Coursera",
+    pdf: "/certificates/power-bi.pdf"
+  },
+  {
+    category: "PHP",
+    name: "Arreglos, Funciones y Estructuras de Control PHP",
+    provider: "Platzi",
+    pdf: "/certificates/php-arreglos-funciones.pdf"
+  },
+  {
+    category: "PHP",
+    name: "Programación Orientada a Objetos en PHP",
+    provider: "Platzi",
+    pdf: "/certificates/php-poo.pdf"
+  },
+  {
+    category: "PHP",
+    name: "Práctico de PHP",
+    provider: "Platzi",
+    pdf: "/certificates/php-practico.pdf"
+  },
+  {
+    category: "Idiomas",
+    name: "B1 English",
+    provider: "Universidad de Ibagué",
+    pdf: "/certificates/english.pdf"
+  },
+];
+---
+
+<section class="bg-gray-50 text-gray-800 py-16">
+  <div class="container mx-auto px-6 sm:px-12">
+    <h2 class="text-4xl font-bold text-center">Certificaciones</h2>
+    <p class="mt-4 text-lg text-gray-600 text-center">
+      Certificaciones y cursos completados en diferentes áreas
+    </p>
+
+    <div class="swiper mt-12">
+      <div class="swiper-wrapper">
+        {
+          certificates.map((cert) => (
+            <div class="swiper-slide">
+              <div class="bg-white rounded-lg shadow-lg p-6 h-full flex flex-col">
+                <div class="bg-gray-100 p-4 rounded-t-lg">
+                  <p class="text-sm font-medium text-gray-500">
+                    {cert.category}
+                  </p>
+                </div>
+                <div class="flex-grow p-4">
+                  <h3 class="text-xl font-bold mb-2">{cert.name}</h3>
+                  <p class="text-gray-600">{cert.provider}</p>
+                </div>
+                <div class="mt-4 pt-4 border-t border-gray-100">
+                  <a
+                    href={cert.pdf}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="text-blue-600 hover:text-blue-800 flex items-center justify-center gap-2 group"
+                  >
+                    Ver certificado →
+                  </a>
+                </div>
+              </div>
+            </div>
+          ))
+        }
       </div>
     </div>
-  </section>
-  
+  </div>
+</section>
+
+<script>
+  import Swiper from "swiper";
+  import { Autoplay } from "swiper/modules";
+  import "swiper/css";
+
+  new Swiper(".swiper", {
+    modules: [Autoplay],
+    slidesPerView: 1,
+    spaceBetween: 30,
+    loop: true,
+    speed: 3500,
+    autoplay: {
+      delay: 2000,
+      disableOnInteraction: false,
+    },
+    breakpoints: {
+      640: {
+        slidesPerView: 2,
+      },
+      1024: {
+        slidesPerView: 3,
+      },
+    },
+  });
+</script>
+
+<style>
+  .swiper {
+    width: 100%;
+    padding: 1rem;
+    cursor: grab;
+  }
+  .swiper:active {
+    cursor: grabbing;
+  }
+  .swiper-slide {
+    height: auto;
+  }
+</style>
