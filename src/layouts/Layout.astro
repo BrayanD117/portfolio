@@ -16,30 +16,23 @@
       href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&display=swap"
       rel="stylesheet"
     />
+    <script
+      async
+      src=`https://www.googletagmanager.com/gtag/js?id=${import.meta.env.GA_MEASUREMENT_ID}`
+    ></script>
     <script>
-      (function (w, d, s, l, i) {
-        w[l] = w[l] || [];
-        w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
-        var f = d.getElementsByTagName(s)[0],
-          j = d.createElement(s),
-          dl = l != "dataLayer" ? "&l=" + l : "";
-        j.async = true;
-        j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
-        f.parentNode.insertBefore(j, f);
-      })(window, document, "script", "dataLayer", "GTM-NDC8ZKC6");
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", `${import.meta.env.GA_MEASUREMENT_ID}`);
     </script>
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
     <title>Brayan Patiño</title>
   </head>
   <body>
-    <noscript>
-      <iframe
-        src="https://www.googletagmanager.com/ns.html?id=GTM-NDC8ZKC6"
-        height="0"
-        width="0"
-        style="display:none;visibility:hidden"></iframe>
-    </noscript>
     <slot />
   </body>
 </html>
