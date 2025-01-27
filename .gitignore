@@ -23,6 +23,6 @@ pnpm-debug.log*
 # jetbrains setting folder
 .idea/
 
-/public/images/*
-/public/certificates/*
-/public/cv.pdf
+# /public/images/*
+# /public/certificates/*
+# /public/cv.pdf
