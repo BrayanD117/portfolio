@@ -1,12 +1,15 @@
 ---
-import 'swiper/css';
-import 'swiper/css/navigation';
-import 'swiper/css/pagination';
-import 'swiper/css/autoplay';
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+import "swiper/css/autoplay";
+import Image from "astro/components/Image.astro";
 
 interface Image {
   src: string;
   alt: string;
+  width?: number;
+  height?: number;
 }
 
 interface Props {
@@ -15,29 +18,33 @@ interface Props {
   autoplayDelay?: number;
 }
 
-const { 
-  images, 
-  height = "400px",
-  autoplayDelay = 3000 
-} = Astro.props;
+const { images, height = "400px", autoplayDelay = 3000 } = Astro.props;
 ---
 
 <div class="swiper-container">
   <div class="swiper-wrapper">
-    {images.map((image) => (
-      <div class="swiper-slide">
-        <img src={image.src} alt={image.alt} class="w-full h-full object-cover" />
-      </div>
-    ))}
+    {
+      images.map((image) => (
+        <div class="swiper-slide">
+          <Image
+            src={image.src}
+            alt={image.alt}
+            width={image.width || 800}
+            height={image.height || 600}
+            quality={80}
+          />
+        </div>
+      ))
+    }
   </div>
 </div>
 
 <script>
-  import Swiper from 'swiper';
-  import { Navigation, Pagination, Autoplay } from 'swiper/modules';
+  import Swiper from "swiper";
+  import { Navigation, Pagination, Autoplay } from "swiper/modules";
 
-  document.addEventListener('DOMContentLoaded', () => {
-    const swiper = new Swiper('.swiper-container', {
+  document.addEventListener("DOMContentLoaded", () => {
+    const swiper = new Swiper(".swiper-container", {
       modules: [Navigation, Pagination, Autoplay],
       slidesPerView: 1,
       spaceBetween: 30,
@@ -47,13 +54,13 @@ const {
         disableOnInteraction: false,
       },
       pagination: {
-        el: '.swiper-pagination',
+        el: ".swiper-pagination",
         clickable: true,
       },
       navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
-      }
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
     });
   });
 </script>

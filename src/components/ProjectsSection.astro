@@ -1,98 +1,136 @@
 ---
-import Carousel from '../components/Carousel/Carousel.astro';
+import Carousel from "../components/Carousel/Carousel.astro";
 
 const miroImages = [
   {
-    src: "/images/miro/slide1.webp",
-    alt: "MIRÓ Dashboard"
+    src: "/images/miro1.webp",
+    alt: "MIRÓ Dashboard",
+    width: 1280,
+    height: 720,
   },
   {
-    src: "/images/miro/slide2.webp",
-    alt: "MIRÓ Estadísticas"
+    src: "/images/miro2.webp",
+    alt: "MIRÓ Estadísticas",
+    width: 1280,
+    height: 720,
   },
   {
-    src: "/images/miro/slide3.webp",
-    alt: "MIRÓ Reportes"
-  }
+    src: "/images/miro3.webp",
+    alt: "MIRÓ Reportes",
+    width: 1280,
+    height: 720,
+  },
+  {
+    src: "/images/miro4.webp",
+    alt: "MIRÓ Reportes",
+    width: 1280,
+    height: 720,
+  },
 ];
 
 const femseaptoImages = [
   {
-    src: "/images/femseapto/slide1.webp",
-    alt: "FEMSEAPTO Portal"
+    src: "/images/fem1.webp",
+    alt: "FEMSEAPTO Portal",
+    width: 1280,
+    height: 720,
   },
   {
-    src: "/images/femseapto/slide2.webp",
-    alt: "FEMSEAPTO Dashboard"
+    src: "/images/fem2.webp",
+    alt: "FEMSEAPTO Dashboard",
+    width: 1280,
+    height: 720,
   },
   {
-    src: "/images/femseapto/slide3.webp",
-    alt: "FEMSEAPTO Servicios"
-  }
+    src: "/images/fem3.webp",
+    alt: "FEMSEAPTO Servicios",
+    width: 1280,
+    height: 720,
+  },
 ];
 ---
 
 <section class="bg-gray-100 text-gray-800 py-16">
-    <div class="container mx-auto px-6 sm:px-12 space-y-12">
-      <div class="text-center">
-        <h2 class="text-3xl sm:text-4xl font-bold">Mis Proyectos</h2>
-        <p class="mt-4 text-lg text-gray-600">Aquí están algunos de los proyectos en los que he trabajado.</p>
+  <div class="container mx-auto px-6 sm:px-12 space-y-12">
+    <div class="text-center">
+      <h2 class="text-3xl sm:text-4xl font-bold">Mis Proyectos</h2>
+      <p class="mt-4 text-lg text-gray-600">
+        Aquí están algunos de los proyectos en los que he trabajado.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+      <div class="space-y-4">
+        <h3 class="text-2xl font-bold">MIRÓ</h3>
+        <p class="text-lg text-gray-600">
+          MIRÓ es una plataforma tecnológica que centraliza y estandariza los
+          datos para los procesos de acreditación académica en la Universidad de
+          Ibagué. Resuelve problemas de dispersión de datos y falta de
+          automatización, mejorando la calidad, accesibilidad y confiabilidad de
+          la información.
+        </p>
+        <div class="flex flex-wrap items-center space-x-4 mt-4">
+          <i
+            class="devicon-nodejs-plain-wordmark text-green-500 text-3xl"
+            title="Node.js"></i>
+          <i
+            class="devicon-express-original text-gray-500 text-3xl"
+            title="Express.js"></i>
+          <i class="devicon-nextjs-plain text-black text-3xl" title="Next.js"
+          ></i>
+          <i
+            class="devicon-mongodb-plain text-green-500 text-3xl"
+            title="MongoDB"></i>
+          <i
+            class="devicon-ubuntu-plain text-orange-500 text-3xl"
+            title="Ubuntu"></i>
+          <i
+            class="devicon-github-original text-gray-700 text-3xl"
+            title="GitHub"></i>
+        </div>
+        <a
+          href="#detalles"
+          class="inline-block text-blue-500 hover:text-blue-600 font-medium mt-4"
+          >Ver más detalles →</a
+        >
       </div>
-  
-      <div class="flex flex-col md:flex-row items-center space-y-6 md:space-y-0 md:space-x-6">
-        <div class="md:w-1/2 space-y-4">
-          <h3 class="text-2xl font-bold">MIRÓ</h3>
-          <p class="text-lg text-gray-600">
-            MIRÓ es una plataforma tecnológica que centraliza y estandariza los datos para los procesos de 
-            acreditación académica en la Universidad de Ibagué. Resuelve problemas de dispersión de datos y 
-            falta de automatización, mejorando la calidad, accesibilidad y confiabilidad de la información.
-          </p>
-          <div class="flex flex-wrap items-center space-x-4 mt-4">
-            <i class="devicon-nodejs-plain-wordmark text-green-500 text-3xl" title="Node.js"></i>
-            <i class="devicon-express-original text-gray-500 text-3xl" title="Express.js"></i>
-            <i class="devicon-nextjs-plain text-black text-3xl" title="Next.js"></i>
-            <i class="devicon-mongodb-plain text-green-500 text-3xl" title="MongoDB"></i>
-            <i class="devicon-ubuntu-plain text-orange-500 text-3xl" title="Ubuntu"></i>
-            <i class="devicon-github-original text-gray-700 text-3xl" title="GitHub"></i>
-          </div>
-          <a href="#detalles" class="inline-block text-blue-500 hover:text-blue-600 font-medium mt-4">Ver más detalles →</a>
-        </div>
-        <div class="md:w-1/2 flex justify-center">
-          <Carousel 
-            images={miroImages}
-            height="350px"
-            autoplayDelay={4000}
-          />
-        </div>
-      </div>
-  
-      <div class="flex flex-col md:flex-row-reverse items-center space-y-6 md:space-y-0 md:space-x-6">
-        <div class="md:w-1/2 space-y-4">
-          <h3 class="text-2xl font-bold">FEMSEAPTO</h3>
-          <p class="text-lg text-gray-600">
-            FEMSEAPTO es una plataforma diseñada para los asociados del fondo de empleados, permitiéndoles
-            gestionar sus créditos, ahorros y cuotas pendientes de manera eficiente. También facilita la 
-            consulta de estados financieros, brindando accesibilidad y optimización en los procesos internos.
-          </p>
-          <div class="flex flex-wrap items-center space-x-4 mt-4">
-            <i class="devicon-angularjs-plain text-red-500 text-3xl" title="Angular"></i>
-            <i class="devicon-php-plain text-purple-500 text-3xl" title="PHP"></i>
-            <i class="devicon-mysql-plain text-blue-500 text-3xl" title="MySQL"></i>
-            <i class="devicon-github-original text-gray-700 text-3xl" title="GitHub"></i>
-          </div>
-          <a href="https://femseapto.com.co/" target="_blank" rel="noopener noreferrer" class="inline-block text-blue-500 hover:text-blue-600 font-medium mt-4">
-            Visitar Proyecto →
-          </a>
-        </div>
-  
-        <div class="md:w-1/2 flex justify-center mr-5">
-          <Carousel 
-              images={femseaptoImages}
-              height="400px"
-              autoplayDelay={3000}
-            />
-        </div>
+      <div class="flex justify-center">
+        <Carousel images={miroImages} height="350px" autoplayDelay={4000} />
       </div>
     </div>
-  </section>
-  
+
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+      <div class="lg:order-2 space-y-4">
+        <h3 class="text-2xl font-bold">FEMSEAPTO</h3>
+        <p class="text-lg text-gray-600">
+          FEMSEAPTO es una plataforma diseñada para los asociados del fondo de
+          empleados, permitiéndoles gestionar sus créditos, ahorros y cuotas
+          pendientes de manera eficiente. También facilita la consulta de
+          estados financieros, brindando accesibilidad y optimización en los
+          procesos internos.
+        </p>
+        <div class="flex flex-wrap items-center space-x-4 mt-4">
+          <i
+            class="devicon-angularjs-plain text-red-500 text-3xl"
+            title="Angular"></i>
+          <i class="devicon-php-plain text-purple-500 text-3xl" title="PHP"></i>
+          <i class="devicon-mysql-plain text-blue-500 text-3xl" title="MySQL"></i>
+          <i
+            class="devicon-github-original text-gray-700 text-3xl"
+            title="GitHub"></i>
+        </div>
+        <a
+          href="https://femseapto.com.co/"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-block text-blue-500 hover:text-blue-600 font-medium mt-4"
+        >
+          Visitar Proyecto →
+        </a>
+      </div>
+      <div class="lg:order-1 flex justify-center">
+        <Carousel images={femseaptoImages} height="400px" autoplayDelay={3000} />
+      </div>
+    </div>    
+  </div>
+</section>
