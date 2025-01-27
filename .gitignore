@@ -25,3 +25,4 @@ pnpm-debug.log*
 
 /public/images/*
 /public/certificates/*
+/public/cv.pdf
