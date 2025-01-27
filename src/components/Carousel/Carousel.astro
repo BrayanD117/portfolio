@@ -69,13 +69,15 @@ const { images, height = "400px", autoplayDelay = 3000 } = Astro.props;
   .swiper-container {
     width: 100%;
     height: var(--height);
-    border-radius: 0.5rem;
     overflow: hidden;
   }
 
   .swiper-slide {
     width: 100%;
     height: 100%;
-    background: #f1f1f1;
+    border-radius: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 </style>
