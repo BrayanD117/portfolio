@@ -1,0 +1,35 @@
+---
+import Layout from "../layouts/Layout.astro";
+import "../styles/globals.css";
+---
+
+<Layout>
+  <section
+    class="bg-gradient-to-br from-slate-900 to-slate-700 text-white min-h-screen flex items-center justify-center"
+  >
+    <div class="container mx-auto px-6 sm:px-12 text-center">
+      <h1 class="text-4xl font-bold mb-6">¡Gracias por tu mensaje!</h1>
+      <p class="text-lg text-gray-300 mb-8">
+        He recibido tu mensaje y me pondré en contacto contigo lo antes posible.
+        Mientras tanto, puedes explorar más sobre mis proyectos o visitar mis
+        redes sociales.
+      </p>
+      <div class="flex justify-center space-x-4">
+        <a
+          href="/"
+          class="bg-blue-500 text-white px-6 py-2 rounded-lg hover:bg-blue-600"
+        >
+          Volver al inicio
+        </a>
+        <a
+          href="https://github.com/BrayanD117"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="bg-gray-700 text-white px-6 py-2 rounded-lg hover:bg-gray-600"
+        >
+          Ver mi GitHub
+        </a>
+      </div>
+    </div>
+  </section>
+</Layout>
