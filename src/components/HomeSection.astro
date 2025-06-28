@@ -47,9 +47,13 @@ import '../components/styles/HomeSection.css';
     <div class="w-full md:w-1/2 flex justify-center">
       <Image 
         src={personalPhoto} 
-        alt="Imagen personal" 
+        alt="Brayan Patiño - Desarrollador de Software"
         class="rounded-full shadow-lg max-w-[200px] sm:max-w-[300px] md:max-w-[350px] lg:max-w-[400px] border border-gray-700"
-        loading="eager" 
+        loading="eager"
+        priority={true}
+        widths={[200, 300, 350, 400]}
+        sizes="(max-width: 640px) 200px, (max-width: 768px) 300px, (max-width: 1024px) 350px, 400px"
+        format="webp"
       />
     </div>
   </div>
