@@ -13,7 +13,10 @@ function calcularTiempo(inicio: string | number | Date) {
     meses += 12;
   }
 
-  return `${años} año(s) y ${meses} mes(es)`;
+  const textoAños = años === 1 ? "Año" : "Años";
+  const textoMeses = meses === 1 ? "Mes" : "Meses";
+
+  return `${años} ${textoAños} y ${meses} ${textoMeses}`;
 }
 
 const tiempoTrabajando = calcularTiempo("2024-02-02");
@@ -43,7 +46,7 @@ const tiempoTrabajando = calcularTiempo("2024-02-02");
           <h3 class="text-xl font-bold">Experiencia</h3>
           <p>
             2 años desarrollando software, actualmente trabajando en GanaGana
-            desde febrero de 2024 (aproximadamente {tiempoTrabajando}).
+            desde febrero de 2024 ({tiempoTrabajando}).
           </p>
         </div>
         <div>
