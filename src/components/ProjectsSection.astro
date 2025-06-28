@@ -1,5 +1,6 @@
 ---
 import Carousel from "../components/Carousel/Carousel.astro";
+import { Image } from "astro:assets";
 
 const miroImages = [
   {
@@ -50,7 +51,10 @@ const femseaptoImages = [
 ];
 ---
 
-<section id="projects" class="bg-gradient-to-br from-slate-700 to-slate-900 text-white py-16">
+<section
+  id="projects"
+  class="bg-gradient-to-br from-slate-700 to-slate-900 text-white py-16"
+>
   <div class="container mx-auto px-6 sm:px-12 space-y-12">
     <div class="text-center">
       <h2 class="text-3xl sm:text-4xl font-bold">Mis Proyectos</h2>
@@ -61,7 +65,17 @@ const femseaptoImages = [
 
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
       <div class="space-y-4">
-        <h3 class="text-2xl font-bold">MIRÓ</h3>
+        <div class="flex flex-wrap items-center space-x-4 mb-6">
+          <h3 class="text-2xl font-bold">MIRÓ</h3>
+          <Image
+            src="/images/miro-logo.webp"
+            alt="MIRÓ Logo"
+            class="w-12 h-auto"
+            width={48}
+            height={48}
+          />
+        </div>
+
         <p class="text-lg text-gray-300">
           MIRÓ es una plataforma tecnológica que centraliza y estandariza los
           datos para los procesos de acreditación académica en la Universidad de
@@ -70,19 +84,30 @@ const femseaptoImages = [
           la información.
         </p>
         <div class="flex flex-wrap items-center space-x-4 mt-4">
-          <i class="devicon-nodejs-plain-wordmark text-green-400 text-3xl" title="Node.js"></i>
-          <i class="devicon-express-original text-gray-300 text-3xl" title="Express.js"></i>
-          <i class="devicon-nextjs-plain text-white text-3xl" title="Next.js"></i>
-          <i class="devicon-mongodb-plain text-green-400 text-3xl" title="MongoDB"></i>
-          <i class="devicon-ubuntu-plain text-orange-400 text-3xl" title="Ubuntu"></i>
-          <i class="devicon-github-original text-gray-400 text-3xl" title="GitHub"></i>
+          <i
+            class="devicon-nodejs-plain-wordmark text-green-400 text-3xl"
+            title="Node.js"></i>
+          <i
+            class="devicon-express-original text-gray-300 text-3xl"
+            title="Express.js"></i>
+          <i class="devicon-nextjs-plain text-white text-3xl" title="Next.js"
+          ></i>
+          <i
+            class="devicon-mongodb-plain text-green-400 text-3xl"
+            title="MongoDB"></i>
+          <i
+            class="devicon-ubuntu-plain text-orange-400 text-3xl"
+            title="Ubuntu"></i>
+          <i
+            class="devicon-github-original text-gray-400 text-3xl"
+            title="GitHub"></i>
         </div>
         <a
-          href="https://github.com/BrayanD117/Front_Miro"
+          href="https://miro.unibague.edu.co/"
           target="_blank"
           class="inline-block text-blue-400 hover:text-blue-500 font-medium mt-4"
         >
-          Ver más detalles →
+          Visitar Proyecto →
         </a>
       </div>
       <div class="flex justify-center">
@@ -92,7 +117,17 @@ const femseaptoImages = [
 
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
       <div class="lg:order-2 space-y-4">
-        <h3 class="text-2xl font-bold">FEMSEAPTO</h3>
+        <div class="flex flex-wrap items-center space-x-4 mb-6">
+          <h3 class="text-2xl font-bold">FEMSEAPTO</h3>
+          <Image
+            src="/images/femseapto-logo.webp"
+            alt="FEMSEAPTO Logo"
+            class="w-12 h-auto"
+            width={48}
+            height={48}
+            loading="lazy"
+          />
+        </div>
         <p class="text-lg text-gray-300">
           FEMSEAPTO es una plataforma diseñada para los asociados del fondo de
           empleados, permitiéndoles gestionar sus créditos, ahorros y cuotas
@@ -101,10 +136,15 @@ const femseaptoImages = [
           procesos internos.
         </p>
         <div class="flex flex-wrap items-center space-x-4 mt-4">
-          <i class="devicon-angularjs-plain text-red-400 text-3xl" title="Angular"></i>
+          <i
+            class="devicon-angularjs-plain text-red-400 text-3xl"
+            title="Angular"></i>
           <i class="devicon-php-plain text-purple-400 text-3xl" title="PHP"></i>
-          <i class="devicon-mysql-plain text-blue-400 text-3xl" title="MySQL"></i>
-          <i class="devicon-github-original text-gray-400 text-3xl" title="GitHub"></i>
+          <i class="devicon-mysql-plain text-blue-400 text-3xl" title="MySQL"
+          ></i>
+          <i
+            class="devicon-github-original text-gray-400 text-3xl"
+            title="GitHub"></i>
         </div>
         <a
           href="https://femseapto.com.co/"
@@ -116,7 +156,11 @@ const femseaptoImages = [
         </a>
       </div>
       <div class="lg:order-1 flex justify-center">
-        <Carousel images={femseaptoImages} height="400px" autoplayDelay={3000} />
+        <Carousel
+          images={femseaptoImages}
+          height="400px"
+          autoplayDelay={3000}
+        />
       </div>
     </div>
   </div>
