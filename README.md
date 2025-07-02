@@ -1,48 +1,45 @@
-# Astro Starter Kit: Basics
+# Portfolio
 
-```sh
-npm create astro@latest -- --template basics
+This repository contains the source code of my personal portfolio. It is built with **Astro** and uses **React** components along with **Tailwind CSS** for styling. The site is deployed on Vercel.
+
+## Installation
+
+```bash
+npm install
 ```
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/basics)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/basics)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/basics/devcontainer.json)
+## Development
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+Start the development server with:
 
-![just-the-basics](https://github.com/withastro/astro/assets/2244813/a0a5533c-a856-4198-8470-2d67b1d7c554)
-
-## 🚀 Project Structure
-
-Inside of your Astro project, you'll see the following folders and files:
-
-```text
-/
-├── public/
-│   └── favicon.svg
-├── src/
-│   ├── layouts/
-│   │   └── Layout.astro
-│   └── pages/
-│       └── index.astro
-└── package.json
+```bash
+npm run dev
 ```
 
-To learn more about the folder structure of an Astro project, refer to [our guide on project structure](https://docs.astro.build/en/basics/project-structure/).
+## Deployment
 
-## 🧞 Commands
+Generate the static files with:
 
-All commands are run from the root of the project, from a terminal:
+```bash
+npm run build
+```
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+Upload the contents of the `dist/` folder to any static hosting provider or connect this project to Vercel for automatic deployments.
 
-## 👀 Want to learn more?
+## Project structure
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+- **src/** contains all the source code.
+  - **pages/** includes the main pages of the site.
+  - **layouts/** defines the base template.
+  - **components/** groups the reusable components for each section (home, projects, experience, etc.).
+  - **styles/** stores global styles.
+- **public/** holds images, certificates, and other static files.
+- **astro.config.mjs** configures Astro with the Tailwind and React integrations.
+- **package.json** declares the project dependencies and scripts.
+
+## Technologies
+
+- [Astro](https://astro.build/) for static site generation.
+- [React](https://reactjs.org/) for interactive components.
+- [Tailwind CSS](https://tailwindcss.com/) for styling.
+- [Vercel](https://vercel.com/) for deployment and traffic analytics.
