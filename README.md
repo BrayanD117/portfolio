@@ -43,3 +43,7 @@ Upload the contents of the `dist/` folder to any static hosting provider or conn
 - [React](https://reactjs.org/) for interactive components.
 - [Tailwind CSS](https://tailwindcss.com/) for styling.
 - [Vercel](https://vercel.com/) for deployment and traffic analytics.
+
+## License
+
+This project is licensed under the [MIT License](LICENSE).
