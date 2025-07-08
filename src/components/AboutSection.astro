@@ -6,15 +6,16 @@ import "../components/styles/AboutSection.css";
   <div class="container mx-auto px-6 sm:px-12">
     <h2 class="text-4xl sm:text-4xl font-bold text-center mb-12">Sobre mí</h2>
 
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
-      <div class="space-y-6">
+    <!-- Personal Info -->
+    <div class="max-w-4xl mx-auto mb-12">
+      <div class="text-center space-y-6">
         <p class="text-lg">
           Soy un desarrollador de software apasionado con experiencia en
           desarrollo ágil y una amplia gama de tecnologías como React, Angular,
           Node.js, y más. Estoy comprometido con la calidad y la innovación
           tecnológica.
         </p>
-        <div class="flex items-center space-x-4">
+        <div class="flex items-center justify-center space-x-4">
           <i class="fas fa-map-marker-alt text-red-500 text-2xl"></i>
           <span>Ibagué, Tolima, Colombia</span>
         </div>
@@ -23,10 +24,15 @@ import "../components/styles/AboutSection.css";
           <p>Escuchar música, jugar fútbol, y explorar nuevas tecnologías.</p>
         </div>
       </div>
+    </div>
 
+    <!-- Tech Stack -->
+    <div class="max-w-6xl mx-auto">
       <div class="space-y-6">
         <div>
-          <h3 class="text-xl font-bold">Habilidades Técnicas</h3>
+          <h3 class="text-xl font-bold text-center mb-8">Habilidades Técnicas</h3>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
 
           <div class="space-y-2">
             <h4 class="text-lg font-semibold">Frontend</h4>
@@ -253,7 +259,6 @@ import "../components/styles/AboutSection.css";
                   title="Canva"></i>
               </li>
             </ul>
-          </div>
         </div>
       </div>
     </div>
