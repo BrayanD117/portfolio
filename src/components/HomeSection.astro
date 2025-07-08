@@ -9,16 +9,29 @@ import "../components/styles/HomeSection.css";
   class="bg-gradient-to-br from-slate-500 to-slate-900 text-white min-h-screen flex items-center"
 >
   <div
-    class="container mx-auto px-6 sm:px-12 flex flex-col-reverse md:flex-row items-center justify-between"
+    class="container mx-auto px-6 sm:px-12 flex flex-col items-center justify-center text-center"
   >
-    <div class="text-center md:text-left space-y-6">
+    <div class="mb-8">
+      <Image
+        src={personalPhoto}
+        alt="Brayan Patiño - Desarrollador de Software"
+        class="rounded-full shadow-lg max-w-[200px] sm:max-w-[300px] md:max-w-[350px] lg:max-w-[400px] border border-gray-700 mx-auto"
+        loading="eager"
+        fetchpriority="high"
+        widths={[200, 300, 350, 400]}
+        sizes="(max-width: 640px) 200px, (max-width: 768px) 300px, (max-width: 1024px) 350px, 400px"
+        format="webp"
+      />
+    </div>
+
+    <div class="text-center space-y-6">
       <h1 class="text-4xl sm:text-5xl font-bold">
         ¡Hola! Soy <span class="text-blue-400">Brayan</span>
       </h1>
       <p class="text-2xl sm:text-2xl font-semibold">
         Ing. de Sistemas 👨‍💻
       </p>
-      <p class="text-lg sm:text-xl max-w-xl">
+      <p class="text-lg sm:text-xl max-w-xl mx-auto">
         Soy un desarrollador de software apasionado por{" "}
         <span class="text-blue-400 custom-typewriter">
           <Typewriter
@@ -39,7 +52,7 @@ import "../components/styles/HomeSection.css";
           />
         </span>
       </p>
-      <div class="flex space-x-4 justify-center md:justify-start">
+      <div class="flex space-x-4 justify-center">
         <a
           href="#projects"
           class="bg-blue-700 text-white px-6 py-2 rounded-lg hover:bg-blue-600 flex items-center space-x-2"
@@ -57,19 +70,6 @@ import "../components/styles/HomeSection.css";
           <span>Ver CV</span>
         </a>
       </div>
-    </div>
-
-    <div class="w-full md:w-1/2 flex justify-center">
-      <Image
-        src={personalPhoto}
-        alt="Brayan Patiño - Desarrollador de Software"
-        class="rounded-full shadow-lg max-w-[200px] sm:max-w-[300px] md:max-w-[350px] lg:max-w-[400px] border border-gray-700"
-        loading="eager"
-        fetchpriority="high"
-        widths={[200, 300, 350, 400]}
-        sizes="(max-width: 640px) 200px, (max-width: 768px) 300px, (max-width: 1024px) 350px, 400px"
-        format="webp"
-      />
     </div>
   </div>
   <script>
