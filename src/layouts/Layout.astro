@@ -1,5 +1,6 @@
 ---
 import Analytics from '@vercel/analytics/astro'
+import ScrollToTop from '../components/ScrollToTop.astro'
 import '../styles/globals.css'
 import '../styles/reveal.css'
 ---
@@ -62,6 +63,7 @@ import '../styles/reveal.css'
   </head>
   <body>
     <slot />
+    <ScrollToTop />
     <script>
       document.addEventListener('DOMContentLoaded', () => {
         const observer = new IntersectionObserver((entries, obs) => {
