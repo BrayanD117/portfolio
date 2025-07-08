@@ -1,28 +1,35 @@
 ---
-import { Image } from 'astro:assets';
-import personalPhoto from '../../public/images/myPhoto.webp';
-import Typewriter from 'typewriter-effect';
-import '../components/styles/HomeSection.css';
+import { Image } from "astro:assets";
+import personalPhoto from "../../public/images/myPhoto.webp";
+import Typewriter from "typewriter-effect";
+import "../components/styles/HomeSection.css";
 ---
 
-<section class="bg-gradient-to-br from-slate-500 to-slate-900 text-white min-h-screen flex items-center">
-  <div class="container mx-auto px-6 sm:px-12 flex flex-col-reverse md:flex-row items-center justify-between">
+<section
+  class="bg-gradient-to-br from-slate-500 to-slate-900 text-white min-h-screen flex items-center"
+>
+  <div
+    class="container mx-auto px-6 sm:px-12 flex flex-col-reverse md:flex-row items-center justify-between"
+  >
     <div class="text-center md:text-left space-y-6">
       <h1 class="text-4xl sm:text-5xl font-bold">
         ¡Hola! Soy <span class="text-blue-400">Brayan</span>
       </h1>
+      <p class="text-2xl sm:text-2xl font-semibold">
+        Ing. de Sistemas 👨‍💻
+      </p>
       <p class="text-lg sm:text-xl max-w-xl">
-        Soy un desarrollador de software apasionado por{' '}
+        Soy un desarrollador de software apasionado por{" "}
         <span class="text-blue-400 custom-typewriter">
           <Typewriter
             client:only
             options={{
               strings: [
-                'innovar con tecnología avanzada',
-                'resolver desafíos complejos',
-                'construir plataformas confiables',
-                'desarrollar aplicaciones de alto rendimiento',
-                'diseñar soluciones a medida'
+                "innovar con tecnología avanzada",
+                "resolver desafíos complejos",
+                "construir plataformas confiables",
+                "desarrollar aplicaciones de alto rendimiento",
+                "diseñar soluciones a medida",
               ],
               autoStart: true,
               loop: true,
@@ -33,20 +40,28 @@ import '../components/styles/HomeSection.css';
         </span>
       </p>
       <div class="flex space-x-4 justify-center md:justify-start">
-        <a href="#projects" class="bg-blue-700 text-white px-6 py-2 rounded-lg hover:bg-blue-600 flex items-center space-x-2">
+        <a
+          href="#projects"
+          class="bg-blue-700 text-white px-6 py-2 rounded-lg hover:bg-blue-600 flex items-center space-x-2"
+        >
           <i class="fas fa-folder-open"></i>
           <span>Ver Proyectos</span>
         </a>
-        <a href="/cv.pdf" target="_blank" rel="noopener noreferrer" class="bg-transparent border border-gray-300 px-6 py-2 rounded-lg text-gray-300 hover:bg-gray-300 hover:text-gray-900 flex items-center space-x-2">
-          <i class="fas fa-download"></i>
+        <a
+          href="/cv.pdf"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="bg-transparent border border-gray-300 px-6 py-2 rounded-lg text-gray-300 hover:bg-gray-300 hover:text-gray-900 flex items-center space-x-2"
+        >
+          <i class="fas fa-eye"></i>
           <span>Ver CV</span>
         </a>
       </div>
     </div>
 
     <div class="w-full md:w-1/2 flex justify-center">
-      <Image 
-        src={personalPhoto} 
+      <Image
+        src={personalPhoto}
         alt="Brayan Patiño - Desarrollador de Software"
         class="rounded-full shadow-lg max-w-[200px] sm:max-w-[300px] md:max-w-[350px] lg:max-w-[400px] border border-gray-700"
         loading="eager"
@@ -58,18 +73,18 @@ import '../components/styles/HomeSection.css';
     </div>
   </div>
   <script>
-    document.addEventListener('DOMContentLoaded', () => {
+    document.addEventListener("DOMContentLoaded", () => {
       const links = document.querySelectorAll('a[href^="#"]');
       links.forEach((link) => {
-        link.addEventListener('click', (e) => {
+        link.addEventListener("click", (e) => {
           e.preventDefault();
-          const href = link.getAttribute('href');
+          const href = link.getAttribute("href");
           if (href) {
             const target = document.querySelector(href);
             if (target) {
               target.scrollIntoView({
-                behavior: 'smooth',
-                block: 'start',
+                behavior: "smooth",
+                block: "start",
               });
             }
           }
