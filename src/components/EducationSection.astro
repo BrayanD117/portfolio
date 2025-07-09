@@ -1,40 +1,32 @@
 ---
 import '../components/styles/EducationSection.css';
+import en from "../i18n/en.json";
+import es from "../i18n/es.json";
+const locale = Astro.currentLocale;
+const t = locale === 'es' ? es : en;
 ---
 
 <section id="education" class="education-section py-16 reveal">
   <div class="container mx-auto px-6 sm:px-12">
-    <h2 class="text-4xl sm:text-4xl font-bold text-center mb-12">Educación</h2>
+    <h2 class="text-4xl sm:text-4xl font-bold text-center mb-12">{t.education.title}</h2>
     <div class="timeline-container">
-      <div class="timeline-item">
-        <div class="timeline-icon">
-          <i class="fas fa-graduation-cap"></i>
+      {t.education.timeline.map(item => (
+        <div class="timeline-item">
+          <div class="timeline-icon">
+            <i class={`fas ${/Ingeniero|Engineer/.test(item.degree) ? 'fa-graduation-cap' : 'fa-award'}`}></i>
+          </div>
+          <div class="timeline-content">
+            <h3 class="text-2xl font-bold">{item.degree}</h3>
+            <p class="text-lg font-semibold text-blue-500">{item.institution}</p>
+            {item.date && (
+              <span class="text-md text-gray-500">{item.date}</span>
+            )}
+            {item.description.map(paragraph => (
+              <p class="mt-2">{paragraph}</p>
+            ))}
+          </div>
         </div>
-        <div class="timeline-content">
-          <h3 class="text-2xl font-bold">Ingeniero de Sistemas</h3>
-          <p class="text-lg font-semibold text-blue-500">Universidad de Ibagué</p>
-          <span class="text-md text-gray-500">2020 - 2025</span>
-          <p class="mt-2">
-            Mi proyecto de grado fue el desarrollo de la plataforma MIRÓ, que puedes ver en la sección de proyectos.
-          </p>
-           <p class="mt-2">
-            Certificación de nivel de inglés B1 a través del centro de idiomas de la universidad.
-          </p>
-        </div>
-      </div>
-
-      <div class="timeline-item">
-        <div class="timeline-icon">
-          <i class="fas fa-award"></i>
-        </div>
-        <div class="timeline-content">
-          <h3 class="text-2xl font-bold">Técnico en Sistemas</h3>
-          <p class="text-lg font-semibold text-blue-500">SENA</p>
-          <p class="mt-2">
-            Formación enfocada en el mantenimiento de sistemas, redes y fundamentos de desarrollo de software.
-          </p>
-        </div>
-      </div>
+      ))}
     </div>
   </div>
 </section>

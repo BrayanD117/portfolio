@@ -31,5 +31,27 @@
       "collaboration": "Collaboration & Management",
       "design": "Design & Tools"
     }
+  },
+  "education": {
+    "title": "Education",
+    "timeline": [
+      {
+        "degree": "Systems Engineer",
+        "institution": "University of Ibagué",
+        "date": "2020 - 2025",
+        "description": [
+          "My thesis project was the development of the MIRÓ platform, which you can see in the projects section.",
+          "B1 English level certification through the university's language center."
+        ]
+      },
+      {
+        "degree": "Systems Technician",
+        "institution": "SENA",
+        "date": null,
+        "description": [
+          "Training focused on systems maintenance, networks, and software development fundamentals."
+        ]
+      }
+    ]
   }
 }

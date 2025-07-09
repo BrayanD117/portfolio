@@ -31,5 +31,27 @@
       "collaboration": "Colaboración y Gestión",
       "design": "Diseño y Herramientas"
     }
+  },
+  "education": {
+    "title": "Educación",
+    "timeline": [
+      {
+        "degree": "Ingeniero de Sistemas",
+        "institution": "Universidad de Ibagué",
+        "date": "2020 - 2025",
+        "description": [
+          "Mi proyecto de grado fue el desarrollo de la plataforma MIRÓ, que puedes ver en la sección de proyectos.",
+          "Certificación de nivel de inglés B1 a través del centro de idiomas de la universidad."
+        ]
+      },
+      {
+        "degree": "Técnico en Sistemas",
+        "institution": "SENA",
+        "date": null,
+        "description": [
+          "Formación enfocada en el mantenimiento de sistemas, redes y fundamentos de desarrollo de software."
+        ]
+      }
+    ]
   }
 }
