@@ -177,5 +177,51 @@
         "technologies": []
       }
     ]
+  },
+  "projects": {
+    "title": "My Projects",
+    "subtitle": "Here are some of the projects I've worked on.",
+    "linkText": "Visit Project →",
+    "list": [
+      {
+        "name": "MIRÓ",
+        "logo": { "src": "/images/miro-logo.webp", "alt": "MIRÓ Logo" },
+        "description": "MIRÓ is a technology platform that centralizes and standardizes data for academic accreditation processes at the University of Ibagué. It solves data dispersion and automation issues, improving the quality, accessibility, and reliability of information.",
+        "technologies": [
+          "devicon-nodejs-plain-wordmark text-green-400",
+          "devicon-express-original text-gray-300",
+          "devicon-nextjs-plain text-white",
+          "devicon-mongodb-plain text-green-400",
+          "devicon-ubuntu-plain text-orange-400",
+          "devicon-github-original text-gray-400"
+        ],
+        "url": "https://miro.unibague.edu.co/",
+        "images": [
+          { "src": "/images/miro1.webp", "alt": "MIRÓ Dashboard" },
+          { "src": "/images/miro2.webp", "alt": "MIRÓ Statistics" },
+          { "src": "/images/miro3.webp", "alt": "MIRÓ Reports" }
+        ]
+      },
+      {
+        "name": "FEMSEAPTO",
+        "logo": {
+          "src": "/images/femseapto-logo.webp",
+          "alt": "FEMSEAPTO Logo"
+        },
+        "description": "FEMSEAPTO is a platform designed for employee fund members, allowing them to efficiently manage their loans, savings, and outstanding payments. It also facilitates the consultation of financial statements, providing accessibility and optimizing internal processes.",
+        "technologies": [
+          "devicon-angularjs-plain text-red-400",
+          "devicon-php-plain text-purple-400",
+          "devicon-mysql-plain text-blue-400",
+          "devicon-github-original text-gray-400"
+        ],
+        "url": "https://femseapto.com.co/",
+        "images": [
+          { "src": "/images/fem1.webp", "alt": "FEMSEAPTO Portal" },
+          { "src": "/images/fem2.webp", "alt": "FEMSEAPTO Dashboard" },
+          { "src": "/images/fem3.webp", "alt": "FEMSEAPTO Services" }
+        ]
+      }
+    ]
   }
 }

@@ -1,167 +1,60 @@
 ---
 import Carousel from "../components/Carousel/Carousel.astro";
 import { Image } from "astro:assets";
-
-const miroImages = [
-  {
-    src: "/images/miro1.webp",
-    alt: "MIRÓ Dashboard",
-    width: 1280,
-    height: 720,
-  },
-  {
-    src: "/images/miro2.webp",
-    alt: "MIRÓ Estadísticas",
-    width: 1280,
-    height: 720,
-  },
-  {
-    src: "/images/miro3.webp",
-    alt: "MIRÓ Reportes",
-    width: 1280,
-    height: 720,
-  },
-  {
-    src: "/images/miro4.webp",
-    alt: "MIRÓ Reportes",
-    width: 1280,
-    height: 720,
-  },
-];
-
-const femseaptoImages = [
-  {
-    src: "/images/fem1.webp",
-    alt: "FEMSEAPTO Portal",
-    width: 1280,
-    height: 720,
-  },
-  {
-    src: "/images/fem2.webp",
-    alt: "FEMSEAPTO Dashboard",
-    width: 1280,
-    height: 720,
-  },
-  {
-    src: "/images/fem3.webp",
-    alt: "FEMSEAPTO Servicios",
-    width: 1280,
-    height: 720,
-  },
-];
+import en from "../i18n/en.json";
+import es from "../i18n/es.json";
+const locale = Astro.currentLocale;
+const t = locale === 'es' ? es : en;
 ---
 
-<section
-  id="projects"
-  class="bg-gradient-to-br from-slate-700 to-slate-900 text-white py-16 reveal"
->
-  <div class="container mx-auto px-6 sm:px-12 space-y-12">
+<section id="projects" class="bg-gradient-to-br from-slate-700 to-slate-900 text-white py-16 reveal">
+  <div class="container mx-auto px-6 sm:px-12 space-y-16">
     <div class="text-center">
-      <h2 class="text-3xl sm:text-4xl font-bold">Mis Proyectos</h2>
-      <p class="mt-4 text-lg text-gray-300">
-        Aquí están algunos de los proyectos en los que he trabajado.
-      </p>
+      <h2 class="text-3xl sm:text-4xl font-bold">{t.projects.title}</h2>
+      <p class="mt-4 text-lg text-gray-300">{t.projects.subtitle}</p>
     </div>
 
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
-      <div class="space-y-4">
-        <div class="flex flex-wrap items-center space-x-4 mb-6">
-          <h3 class="text-2xl font-bold">MIRÓ</h3>
-          <Image
-            src="/images/miro-logo.webp"
-            alt="MIRÓ Logo"
-            class="w-12 h-auto"
-            width={48}
-            height={48}
+    {t.projects.list.map((project, index) => (
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+        <div class:list={["space-y-4", { "lg:order-2": index % 2 !== 0 }]}>
+          <div class="flex flex-wrap items-center space-x-4 mb-6">
+            <h3 class="text-2xl font-bold">{project.name}</h3>
+            <Image
+              src={project.logo.src}
+              alt={project.logo.alt}
+              class="w-12 h-auto"
+              width={48}
+              height={48}
+              loading="lazy"
+            />
+          </div>
+
+          <p class="text-lg text-gray-300">{project.description}</p>
+          
+          <div class="flex flex-wrap items-center space-x-4 mt-4">
+            {project.technologies.map(techClass => (
+              <i class:list={[techClass, "text-3xl"]} />
+            ))}
+          </div>
+
+          <a
+            href={project.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-block text-blue-400 hover:text-blue-500 font-medium mt-4"
+          >
+            {t.projects.linkText}
+          </a>
+        </div>
+        
+        <div class:list={["flex justify-center", { "lg:order-1": index % 2 !== 0 }]}>
+          <Carousel 
+            images={project.images} 
+            height="350px" 
+            autoplayDelay={4000 + index * 500} 
           />
         </div>
-
-        <p class="text-lg text-gray-300">
-          MIRÓ es una plataforma tecnológica que centraliza y estandariza los
-          datos para los procesos de acreditación académica en la Universidad de
-          Ibagué. Resuelve problemas de dispersión de datos y falta de
-          automatización, mejorando la calidad, accesibilidad y confiabilidad de
-          la información.
-        </p>
-        <div class="flex flex-wrap items-center space-x-4 mt-4">
-          <i
-            class="devicon-nodejs-plain-wordmark text-green-400 text-3xl"
-            title="Node.js"></i>
-          <i
-            class="devicon-express-original text-gray-300 text-3xl"
-            title="Express.js"></i>
-          <i class="devicon-nextjs-plain text-white text-3xl" title="Next.js"
-          ></i>
-          <i
-            class="devicon-mongodb-plain text-green-400 text-3xl"
-            title="MongoDB"></i>
-          <i
-            class="devicon-ubuntu-plain text-orange-400 text-3xl"
-            title="Ubuntu"></i>
-          <i
-            class="devicon-github-original text-gray-400 text-3xl"
-            title="GitHub"></i>
-        </div>
-        <a
-          href="https://miro.unibague.edu.co/"
-          target="_blank"
-          class="inline-block text-blue-400 hover:text-blue-500 font-medium mt-4"
-        >
-          Visitar Proyecto →
-        </a>
       </div>
-      <div class="flex justify-center">
-        <Carousel images={miroImages} height="350px" autoplayDelay={4000} />
-      </div>
-    </div>
-
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
-      <div class="lg:order-2 space-y-4">
-        <div class="flex flex-wrap items-center space-x-4 mb-6">
-          <h3 class="text-2xl font-bold">FEMSEAPTO</h3>
-          <Image
-            src="/images/femseapto-logo.webp"
-            alt="FEMSEAPTO Logo"
-            class="w-12 h-auto"
-            width={48}
-            height={48}
-            loading="lazy"
-          />
-        </div>
-        <p class="text-lg text-gray-300">
-          FEMSEAPTO es una plataforma diseñada para los asociados del fondo de
-          empleados, permitiéndoles gestionar sus créditos, ahorros y cuotas
-          pendientes de manera eficiente. También facilita la consulta de
-          estados financieros, brindando accesibilidad y optimización en los
-          procesos internos.
-        </p>
-        <div class="flex flex-wrap items-center space-x-4 mt-4">
-          <i
-            class="devicon-angularjs-plain text-red-400 text-3xl"
-            title="Angular"></i>
-          <i class="devicon-php-plain text-purple-400 text-3xl" title="PHP"></i>
-          <i class="devicon-mysql-plain text-blue-400 text-3xl" title="MySQL"
-          ></i>
-          <i
-            class="devicon-github-original text-gray-400 text-3xl"
-            title="GitHub"></i>
-        </div>
-        <a
-          href="https://femseapto.com.co/"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="inline-block text-blue-400 hover:text-blue-500 font-medium mt-4"
-        >
-          Visitar Proyecto →
-        </a>
-      </div>
-      <div class="lg:order-1 flex justify-center">
-        <Carousel
-          images={femseaptoImages}
-          height="400px"
-          autoplayDelay={3000}
-        />
-      </div>
-    </div>
+    ))}
   </div>
 </section>

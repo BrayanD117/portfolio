@@ -177,5 +177,51 @@
         "technologies": []
       }
     ]
+  },
+  "projects": {
+    "title": "Mis Proyectos",
+    "subtitle": "Aquí están algunos de los proyectos en los que he trabajado.",
+    "linkText": "Visitar Proyecto →",
+    "list": [
+      {
+        "name": "MIRÓ",
+        "logo": { "src": "/images/miro-logo.webp", "alt": "Logo de MIRÓ" },
+        "description": "MIRÓ es una plataforma tecnológica que centraliza y estandariza los datos para los procesos de acreditación académica en la Universidad de Ibagué. Resuelve problemas de dispersión de datos y falta de automatización, mejorando la calidad, accesibilidad y confiabilidad de la información.",
+        "technologies": [
+          "devicon-nodejs-plain-wordmark text-green-400",
+          "devicon-express-original text-gray-300",
+          "devicon-nextjs-plain text-white",
+          "devicon-mongodb-plain text-green-400",
+          "devicon-ubuntu-plain text-orange-400",
+          "devicon-github-original text-gray-400"
+        ],
+        "url": "https://miro.unibague.edu.co/",
+        "images": [
+          { "src": "/images/miro1.webp", "alt": "Dashboard de MIRÓ" },
+          { "src": "/images/miro2.webp", "alt": "Estadísticas de MIRÓ" },
+          { "src": "/images/miro3.webp", "alt": "Reportes de MIRÓ" }
+        ]
+      },
+      {
+        "name": "FEMSEAPTO",
+        "logo": {
+          "src": "/images/femseapto-logo.webp",
+          "alt": "Logo de FEMSEAPTO"
+        },
+        "description": "FEMSEAPTO es una plataforma diseñada para los asociados del fondo de empleados, permitiéndoles gestionar sus créditos, ahorros y cuotas pendientes de manera eficiente. También facilita la consulta de estados financieros, brindando accesibilidad y optimización en los procesos internos.",
+        "technologies": [
+          "devicon-angularjs-plain text-red-400",
+          "devicon-php-plain text-purple-400",
+          "devicon-mysql-plain text-blue-400",
+          "devicon-github-original text-gray-400"
+        ],
+        "url": "https://femseapto.com.co/",
+        "images": [
+          { "src": "/images/fem1.webp", "alt": "Portal de FEMSEAPTO" },
+          { "src": "/images/fem2.webp", "alt": "Dashboard de FEMSEAPTO" },
+          { "src": "/images/fem3.webp", "alt": "Servicios de FEMSEAPTO" }
+        ]
+      }
+    ]
   }
 }
