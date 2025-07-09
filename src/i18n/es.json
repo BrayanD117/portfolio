@@ -1,0 +1,17 @@
+{
+  "home": {
+    "greeting": "¡Hola! Soy",
+    "title": "Ing. de Sistemas 👨‍💻",
+    "passion": "Soy un desarrollador de software apasionado por",
+    "typewriterStrings": [
+      "innovar con tecnología avanzada",
+      "resolver desafíos complejos",
+      "construir plataformas confiables",
+      "desarrollar aplicaciones de alto rendimiento",
+      "diseñar soluciones a medida"
+    ],
+    "altPhoto": "Brayan Patiño - Desarrollador de Software",
+    "buttonProjects": "Ver Proyectos",
+    "buttonCV": "Ver CV"
+  }
+}

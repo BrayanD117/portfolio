@@ -1,0 +1,17 @@
+{
+  "home": {
+    "greeting": "Hello! I'm",
+    "title": "Software Engineer 👨‍💻",
+    "passion": "I am a software developer passionate about",
+    "typewriterStrings": [
+      "innovating with advanced technology",
+      "solving complex challenges",
+      "building reliable platforms",
+      "developing high-performance applications",
+      "designing custom solutions"
+    ],
+    "altPhoto": "Brayan Patiño - Software Developer",
+    "buttonProjects": "View Projects",
+    "buttonCV": "View CV"
+  }
+}

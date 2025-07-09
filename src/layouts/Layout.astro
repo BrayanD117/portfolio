@@ -1,22 +1,26 @@
 ---
-import Analytics from '@vercel/analytics/astro'
-import ScrollToTop from '../components/ScrollToTop.astro'
-import '../styles/globals.css'
-import '../styles/reveal.css'
+import Analytics from "@vercel/analytics/astro";
+import ScrollToTop from "../components/ScrollToTop.astro";
+import LanguageSwitcher from "../components/LanguageSwitcher.astro";
+import "../styles/globals.css";
+import "../styles/reveal.css";
 ---
 
 <!doctype html>
-<html lang="es">
+<html lang={Astro.currentLocale}>
   <head>
     <meta charset="UTF-8" />
-    <meta name="description" content="Brayan Patiño - Desarrollador de Software Full Stack con experiencia en React, Angular, Node.js y más. Especializado en desarrollo web moderno y soluciones tecnológicas innovadoras." />
+    <meta
+      name="description"
+      content="Brayan Patiño - Desarrollador de Software Full Stack con experiencia en React, Angular, Node.js y más. Especializado en desarrollo web moderno y soluciones tecnológicas innovadoras."
+    />
     <meta name="viewport" content="width=device-width" />
-    
+
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="preconnect" href="https://cdnjs.cloudflare.com" />
     <link rel="preconnect" href="https://cdn.jsdelivr.net" />
-    
+
     <link
       href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&display=swap"
       rel="stylesheet"
@@ -29,7 +33,7 @@ import '../styles/reveal.css'
         rel="stylesheet"
       />
     </noscript>
-    
+
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css"
@@ -42,7 +46,7 @@ import '../styles/reveal.css'
         href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css"
       />
     </noscript>
-    
+
     <link
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
       rel="stylesheet"
@@ -55,31 +59,39 @@ import '../styles/reveal.css'
         rel="stylesheet"
       />
     </noscript>
-    
+
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
     <Analytics />
     <title>Brayan Patiño</title>
   </head>
   <body>
-    <slot />
-    <ScrollToTop />
-    <script>
-      document.addEventListener('DOMContentLoaded', () => {
-        const observer = new IntersectionObserver((entries, obs) => {
-          entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-              entry.target.classList.add('reveal-visible');
-              obs.unobserve(entry.target);
-            }
-          });
-        }, { threshold: 0.1 });
+    <header class="fixed top-0 right-0 p-4 z-50">
+      <LanguageSwitcher />
+    </header>
+    <main>
+      <slot />
+      <ScrollToTop />
+      <script>
+        document.addEventListener("DOMContentLoaded", () => {
+          const observer = new IntersectionObserver(
+            (entries, obs) => {
+              entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                  entry.target.classList.add("reveal-visible");
+                  obs.unobserve(entry.target);
+                }
+              });
+            },
+            { threshold: 0.1 }
+          );
 
-        document.querySelectorAll('.reveal').forEach((el) => {
-          observer.observe(el);
+          document.querySelectorAll(".reveal").forEach((el) => {
+            observer.observe(el);
+          });
         });
-      });
-    </script>
+      </script>
+    </main>
   </body>
 </html>
 
