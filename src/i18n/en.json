@@ -53,5 +53,102 @@
         ]
       }
     ]
+  },
+  "certifications": {
+    "title": "Certifications",
+    "subtitle": "Certifications and courses completed in different areas",
+    "linkText": "View certificate →",
+    "list": [
+      {
+        "category": "JavaScript",
+        "name": "Asynchronism with JavaScript",
+        "provider": "Platzi",
+        "pdf": "/certificates/asincronismo-js.pdf"
+      },
+      {
+        "category": "Cloud & Data",
+        "name": "AWS Academy Cloud Foundations",
+        "provider": "AWS",
+        "pdf": "/certificates/aws.pdf"
+      },
+      {
+        "category": "JavaScript",
+        "name": "Basic JavaScript",
+        "provider": "Platzi",
+        "pdf": "/certificates/basico-javascript.pdf"
+      },
+      {
+        "category": "JavaScript",
+        "name": "JavaScript Fundamentals",
+        "provider": "Platzi",
+        "pdf": "/certificates/javascript-fundamentos.pdf"
+      },
+      {
+        "category": "Java",
+        "name": "Basic Java",
+        "provider": "Platzi",
+        "pdf": "/certificates/java-basico.pdf"
+      },
+      {
+        "category": "Web Development",
+        "name": "Practical Frontend Developer",
+        "provider": "Platzi",
+        "pdf": "/certificates/frontend-developer-practico.pdf"
+      },
+      {
+        "category": "Web Development",
+        "name": "Professional Git and GitHub",
+        "provider": "Platzi",
+        "pdf": "/certificates/git-github.pdf"
+      },
+      {
+        "category": "Web Development",
+        "name": "Definitive HTML and CSS",
+        "provider": "Platzi",
+        "pdf": "/certificates/html-css.pdf"
+      },
+      {
+        "category": "Networks and Security",
+        "name": "Introduction to Cybersecurity",
+        "provider": "Cisco",
+        "pdf": "/certificates/cybersecurity.pdf"
+      },
+      {
+        "category": "Networks and Security",
+        "name": "Networks Basics",
+        "provider": "Cisco",
+        "pdf": "/certificates/networks.pdf"
+      },
+      {
+        "category": "Cloud & Data",
+        "name": "Power BI",
+        "provider": "Microsoft - Coursera",
+        "pdf": "/certificates/power-bi.pdf"
+      },
+      {
+        "category": "PHP",
+        "name": "Arrays, Functions, and Control Structures in PHP",
+        "provider": "Platzi",
+        "pdf": "/certificates/php-arreglos-funciones.pdf"
+      },
+      {
+        "category": "PHP",
+        "name": "Object-Oriented Programming in PHP",
+        "provider": "Platzi",
+        "pdf": "/certificates/php-poo.pdf"
+      },
+      {
+        "category": "PHP",
+        "name": "Practical PHP",
+        "provider": "Platzi",
+        "pdf": "/certificates/php-practico.pdf"
+      },
+      {
+        "category": "Languages",
+        "name": "B1 English",
+        "provider": "University of Ibagué",
+        "pdf": "/certificates/english.pdf"
+      }
+    ]
   }
 }
