@@ -223,5 +223,14 @@
         ]
       }
     ]
+  },
+  "contact": {
+    "title": "Contáctame",
+    "subtitle": "¡Conectemos! Puedes encontrarme en las siguientes plataformas.",
+    "links": {
+      "linkedin": "LinkedIn",
+      "github": "GitHub",
+      "email": "Correo"
+    }
   }
 }

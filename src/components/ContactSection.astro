@@ -1,11 +1,18 @@
+---
+import en from "../i18n/en.json";
+import es from "../i18n/es.json";
+const locale = Astro.currentLocale;
+const t = locale === 'es' ? es : en;
+---
+
 <section
   id="contacto"
   class="bg-gradient-to-br from-slate-100 to-slate-300 text-slate-900 py-16 reveal"
 >
   <div class="container mx-auto px-6 sm:px-12">
-    <h2 class="text-4xl font-bold text-center mb-8">Contáctame</h2>
+    <h2 class="text-4xl font-bold text-center mb-8">{t.contact.title}</h2>
     <p class="text-center text-lg text-slate-700 mb-12">
-      ¡Conectemos! Puedes encontrarme en las siguientes plataformas.
+      {t.contact.subtitle}
     </p>
 
     <div class="flex flex-wrap justify-center gap-8">
@@ -34,7 +41,7 @@
             <circle cx="4" cy="4" r="2"></circle>
           </svg>
         </div>
-        <span class="font-medium">LinkedIn</span>
+        <span class="font-medium">{t.contact.links.linkedin}</span>
       </a>
 
       <a
@@ -61,7 +68,7 @@
             ></path>
           </svg>
         </div>
-        <span class="font-medium">GitHub</span>
+        <span class="font-medium">{t.contact.links.github}</span>
       </a>
 
       <a
@@ -86,7 +93,7 @@
             ></path>
           </svg>
         </div>
-        <span class="font-medium">Correo</span>
+        <span class="font-medium">{t.contact.links.email}</span>
       </a>
     </div>
   </div>

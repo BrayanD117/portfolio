@@ -223,5 +223,14 @@
         ]
       }
     ]
+  },
+  "contact": {
+    "title": "Contact Me",
+    "subtitle": "Let's connect! You can find me on the following platforms.",
+    "links": {
+      "linkedin": "LinkedIn",
+      "github": "GitHub",
+      "email": "Email"
+    }
   }
 }
