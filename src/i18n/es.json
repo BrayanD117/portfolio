@@ -150,5 +150,32 @@
         "pdf": "/certificates/english.pdf"
       }
     ]
+  },
+  "experience": {
+    "title": "Experiencia Laboral",
+    "techTitle": "Tecnologías:",
+    "timeline": [
+      {
+        "role": "Desarrollador de Software Junior",
+        "company": "GanaGana",
+        "date": "Diciembre 2024 - Presente",
+        "description": "Automatización del proceso de solicitudes para el fondo de empleados, migrando de formatos manuales a una plataforma web. Esto redujo significativamente los tiempos de procesamiento para asociados y funcionarios.",
+        "technologies": ["PHP", "Angular", "GitHub"]
+      },
+      {
+        "role": "Practicante Universitario",
+        "company": "GanaGana",
+        "date": "Febrero 2023 - Diciembre 2024",
+        "description": "Apoyo al equipo de desarrollo en proyectos internos, adquiriendo experiencia en los procesos y tecnologías de la empresa.",
+        "technologies": []
+      },
+      {
+        "role": "Desarrollador Freelance",
+        "company": "Independiente",
+        "date": "Noviembre 2022 - Presente",
+        "description": "Desarrollo de soluciones web a medida para diversos clientes, gestionando proyectos desde la conceptualización hasta el despliegue.",
+        "technologies": []
+      }
+    ]
   }
 }

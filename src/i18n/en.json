@@ -150,5 +150,32 @@
         "pdf": "/certificates/english.pdf"
       }
     ]
+  },
+  "experience": {
+    "title": "Work Experience",
+    "techTitle": "Technologies:",
+    "timeline": [
+      {
+        "role": "Junior Software Developer",
+        "company": "GanaGana",
+        "date": "December 2024 - Present",
+        "description": "Automation of the application process for the employee fund, migrating from manual formats to a web platform. This significantly reduced processing times for associates and officials.",
+        "technologies": ["PHP", "Angular", "GitHub"]
+      },
+      {
+        "role": "University Intern",
+        "company": "GanaGana",
+        "date": "February 2023 - December 2024",
+        "description": "Supported the development team on internal projects, gaining experience in the company's processes and technologies.",
+        "technologies": []
+      },
+      {
+        "role": "Freelance Developer",
+        "company": "Independent",
+        "date": "November 2022 - Present",
+        "description": "Development of custom web solutions for various clients, managing projects from concept to deployment.",
+        "technologies": []
+      }
+    ]
   }
 }

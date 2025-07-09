@@ -1,61 +1,40 @@
 ---
 import '../components/styles/ExperienceSection.css';
+import en from "../i18n/en.json";
+import es from "../i18n/es.json";
+const locale = Astro.currentLocale;
+const t = locale === 'es' ? es : en;
 ---
 
 <section id="experience" class="experience-section py-16 reveal">
   <div class="container mx-auto px-6 sm:px-12">
-    <h2 class="text-4xl sm:text-4xl font-bold text-center mb-12">Experiencia Laboral</h2>
+    <h2 class="text-4xl sm:text-4xl font-bold text-center mb-12">{t.experience.title}</h2>
     <div class="timeline-container">
 
-      <div class="timeline-item">
-        <div class="timeline-icon">
-          <i class="fas fa-briefcase"></i>
-        </div>
-        <div class="timeline-content">
-          <h3 class="text-2xl font-bold">Desarrollador de Software Junior</h3>
-          <p class="text-lg font-semibold text-blue-500">GanaGana</p>
-          <span class="text-md text-gray-500">Diciembre 2024 - Presente</span>
-          <p class="mt-2">
-            Automatización del proceso de solicitudes para el fondo de empleados, migrando de formatos manuales a una plataforma web. Esto redujo significativamente los tiempos de procesamiento para asociados y funcionarios.
-          </p>
-          <div class="mt-4">
-            <h4 class="font-semibold">Tecnologías:</h4>
-            <ul class="flex flex-wrap gap-2 mt-2">
-              <li class="tech-tag">PHP</li>
-              <li class="tech-tag">Angular</li>
-              <li class="tech-tag">GitHub</li>
-            </ul>
+      {t.experience.timeline.map(job => (
+        <div class="timeline-item">
+          <div class="timeline-icon">
+            <i class="fas fa-briefcase"></i>
+          </div>
+          <div class="timeline-content">
+            <h3 class="text-2xl font-bold">{job.role}</h3>
+            <p class="text-lg font-semibold text-blue-500">{job.company}</p>
+            <span class="text-md text-gray-500">{job.date}</span>
+            <p class="mt-2">{job.description}</p>
+            
+            {job.technologies && job.technologies.length > 0 && (
+              <div class="mt-4">
+                <h4 class="font-semibold">{t.experience.techTitle}</h4>
+                <ul class="flex flex-wrap gap-2 mt-2">
+                  {job.technologies.map(tech => (
+                    <li class="tech-tag">{tech}</li>
+                  ))}
+                </ul>
+              </div>
+            )}
           </div>
         </div>
-      </div>
-
-      <div class="timeline-item">
-        <div class="timeline-icon">
-          <i class="fas fa-user-graduate"></i>
-        </div>
-        <div class="timeline-content">
-          <h3 class="text-2xl font-bold">Practicante Universitario</h3>
-          <p class="text-lg font-semibold text-blue-500">GanaGana</p>
-          <span class="text-md text-gray-500">Febrero 2023 - Diciembre 2024</span>
-          <p class="mt-2">
-            Apoyo al equipo de desarrollo en proyectos internos, adquiriendo experiencia en los procesos y tecnologías de la empresa.
-          </p>
-        </div>
-      </div>
-
-      <div class="timeline-item">
-        <div class="timeline-icon">
-          <i class="fas fa-laptop-code"></i>
-        </div>
-        <div class="timeline-content">
-          <h3 class="text-2xl font-bold">Desarrollador Freelance</h3>
-          <p class="text-lg font-semibold text-blue-500">Independiente</p>
-          <span class="text-md text-gray-500">Noviembre 2022 - Presente</span>
-          <p class="mt-2">
-            Desarrollo de soluciones web a medida para diversos clientes, gestionando proyectos desde la conceptualización hasta el despliegue.
-          </p>
-        </div>
-      </div>
+      ))}
 
     </div>
   </div>
