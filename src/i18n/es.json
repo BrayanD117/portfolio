@@ -232,5 +232,15 @@
       "github": "GitHub",
       "email": "Correo"
     }
+  },
+  "footer": {
+    "copyright": "&copy; 2025 Brayan Patiño. Todos los derechos reservados.",
+    "ariaGithub": "GitHub de Brayan Patiño",
+    "ariaLinkedin": "LinkedIn de Brayan Patiño"
+  },
+  "notFound": {
+    "title": "¡Ups! Aquí no hay nada...",
+    "subtitle": "Parece que aquí no está lo que buscas.",
+    "buttonText": "Volver al inicio"
   }
 }

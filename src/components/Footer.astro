@@ -1,11 +1,18 @@
+---
+import en from "../i18n/en.json";
+import es from "../i18n/es.json";
+const locale = Astro.currentLocale;
+const t = locale === 'es' ? es : en;
+---
+
 <footer class="bg-gray-800 text-gray-400 py-6 text-center">
-  <p>&copy; 2025 Brayan Patiño. Todos los derechos reservados.</p>
+  <p set:html={t.footer.copyright} />
   <div class="flex justify-center space-x-4 mt-2">
     <a
       href="https://github.com/BrayanD117"
       target="_blank"
       rel="noopener noreferrer"
-      aria-label="GitHub de Brayan Patiño"
+      aria-label={t.footer.ariaGithub}
     >
       <i class="fab fa-github text-2xl hover:text-white"></i>
     </a>
@@ -13,7 +20,7 @@
       href="https://www.linkedin.com/in/brayan-pati%C3%B1o-07a995220/"
       target="_blank"
       rel="noopener noreferrer"
-      aria-label="LinkedIn de Brayan Patiño"
+      aria-label={t.footer.ariaLinkedin}
     >
       <i class="fab fa-linkedin text-2xl hover:text-white"></i>
     </a>

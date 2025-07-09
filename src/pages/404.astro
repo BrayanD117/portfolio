@@ -1,17 +1,24 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import "../styles/globals.css";
+import { getRelativeLocaleUrl } from 'astro:i18n';
+import en from "../i18n/en.json";
+import es from "../i18n/es.json";
+
+const lang = Astro.url.pathname.startsWith('/es') ? 'es' : 'en';
+const t = lang === 'es' ? es : en;
+
+const homeLink = getRelativeLocaleUrl(lang);
 ---
 
 <Layout>
   <section class="bg-gradient-to-br from-slate-900 to-slate-700 text-white min-h-screen flex items-center justify-center">
     <div class="container mx-auto px-6 sm:px-12 text-center space-y-6">
-      <i class="fas fa-rocket text-6xl text-blue-400 animate-bounce"></i>
-      <h1 class="text-5xl font-bold">¡Ups! Aquí no hay nada...</h1>
-      <p class="text-lg text-gray-300">Parece que aquí no está lo que buscas.</p>
-      <a href="/" class="bg-blue-500 text-white px-6 py-2 rounded-lg hover:bg-blue-600 inline-flex items-center space-x-2">
+      <i class="fas fa-rocket text-6xl text-blue-400"></i>
+      <h1 class="text-5xl font-bold">{t.notFound.title}</h1>
+      <p class="text-lg text-gray-300">{t.notFound.subtitle}</p>
+      <a href={homeLink} class="bg-blue-500 text-white px-6 py-2 rounded-lg hover:bg-blue-600 inline-flex items-center space-x-2">
         <i class="fas fa-home"></i>
-        <span>Volver al inicio</span>
+        <span>{t.notFound.buttonText}</span>
       </a>
     </div>
   </section>
