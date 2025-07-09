@@ -1,0 +1,5 @@
+# /.well-known/security.txt
+Contact: mailto:brayandavid1928@gmail.com
+Expires: 2026-07-08T23:59:59.000Z
+Preferred-Languages: es, en
+Canonical: https://www.brayanpatino/.well-known/security.txt
