@@ -13,5 +13,23 @@
     "altPhoto": "Brayan Patiño - Software Developer",
     "buttonProjects": "View Projects",
     "buttonCV": "View CV"
+  },
+  "about": {
+    "title": "About Me",
+    "description": "I am a passionate software developer with experience in agile development and a wide range of technologies like React, Angular, Node.js, and more. I am committed to quality and technological innovation.",
+    "location": "Ibagué, Tolima, Colombia",
+    "interestsTitle": "Interests",
+    "interestsText": "Listening to music, playing soccer, and exploring new technologies.",
+    "skillsTitle": "Technical Skills",
+    "skillCategories": {
+      "frontend": "Frontend",
+      "backend": "Backend",
+      "orm": "ORM",
+      "databases": "Databases",
+      "devops": "DevOps",
+      "infra": "Infrastructure & Operating Systems",
+      "collaboration": "Collaboration & Management",
+      "design": "Design & Tools"
+    }
   }
 }

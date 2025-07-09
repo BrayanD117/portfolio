@@ -1,27 +1,28 @@
 ---
 import "../components/styles/AboutSection.css";
+import en from "../i18n/en.json";
+import es from "../i18n/es.json";
+const locale = Astro.currentLocale;
+const t = locale === 'es' ? es : en;
 ---
 
 <section class="about-section py-16 reveal">
   <div class="container mx-auto px-6 sm:px-12">
-    <h2 class="text-4xl sm:text-4xl font-bold text-center mb-12">Sobre mí</h2>
+    <h2 class="text-4xl sm:text-4xl font-bold text-center mb-12">{t.about.title}</h2>
 
     <!-- Personal Info -->
     <div class="max-w-4xl mx-auto mb-12">
       <div class="text-center space-y-6">
         <p class="text-lg">
-          Soy un desarrollador de software apasionado con experiencia en
-          desarrollo ágil y una amplia gama de tecnologías como React, Angular,
-          Node.js, y más. Estoy comprometido con la calidad y la innovación
-          tecnológica.
+          {t.about.description}
         </p>
         <div class="flex items-center justify-center space-x-4">
           <i class="fas fa-map-marker-alt text-red-500 text-2xl"></i>
-          <span>Ibagué, Tolima, Colombia</span>
+          <span>{t.about.location}</span>
         </div>
         <div>
-          <h3 class="text-xl font-bold">Intereses</h3>
-          <p>Escuchar música, jugar fútbol, y explorar nuevas tecnologías.</p>
+          <h3 class="text-xl font-bold">{t.about.interestsTitle}</h3>
+          <p>{t.about.interestsText}</p>
         </div>
       </div>
     </div>
@@ -30,12 +31,12 @@ import "../components/styles/AboutSection.css";
     <div class="max-w-6xl mx-auto">
       <div class="space-y-6">
         <div>
-          <h3 class="text-xl font-bold text-center mb-8">Habilidades Técnicas</h3>
+          <h3 class="text-xl font-bold text-center mb-8">{t.about.skillsTitle}</h3>
 
           <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
 
           <div class="space-y-2">
-            <h4 class="text-lg font-semibold">Frontend</h4>
+            <h4 class="text-lg font-semibold">{t.about.skillCategories.frontend}</h4>
             <ul class="flex flex-wrap gap-4">
               <li>
                 <i
@@ -81,7 +82,7 @@ import "../components/styles/AboutSection.css";
           </div>
 
           <div class="space-y-2">
-            <h4 class="text-lg font-semibold">Backend</h4>
+            <h4 class="text-lg font-semibold">{t.about.skillCategories.backend}</h4>
             <ul class="flex flex-wrap gap-4">
               <li>
                 <i
@@ -114,7 +115,7 @@ import "../components/styles/AboutSection.css";
           </div>
 
           <div class="space-y-2">
-            <h4 class="text-lg font-semibold">ORM</h4>
+            <h4 class="text-lg font-semibold">{t.about.skillCategories.orm}</h4>
             <ul class="flex flex-wrap gap-4">
               <li>
                 <i
@@ -130,7 +131,7 @@ import "../components/styles/AboutSection.css";
           </div>
 
           <div class="space-y-2">
-            <h4 class="text-lg font-semibold">Bases de Datos</h4>
+            <h4 class="text-lg font-semibold">{t.about.skillCategories.databases}</h4>
             <ul class="flex flex-wrap gap-4">
                 <li>
                 <i
@@ -161,7 +162,7 @@ import "../components/styles/AboutSection.css";
           </div>
 
           <div class="space-y-2">
-            <h4 class="text-lg font-semibold">DevOps</h4>
+            <h4 class="text-lg font-semibold">{t.about.skillCategories.devops}</h4>
             <ul class="flex flex-wrap gap-4">
               <li>
                 <i
@@ -203,7 +204,7 @@ import "../components/styles/AboutSection.css";
 
           <div class="space-y-2">
             <h4 class="text-lg font-semibold">
-              Infraestructura y Sistemas Operativos
+              {t.about.skillCategories.infra}
             </h4>
             <ul class="flex flex-wrap gap-4">
               <li>
@@ -220,7 +221,7 @@ import "../components/styles/AboutSection.css";
           </div>
 
           <div class="space-y-2">
-            <h4 class="text-lg font-semibold">Colaboración y Gestión</h4>
+            <h4 class="text-lg font-semibold">{t.about.skillCategories.collaboration}</h4>
             <ul class="flex flex-wrap gap-4">
               <li>
                 <i
@@ -246,7 +247,7 @@ import "../components/styles/AboutSection.css";
           </div>
 
           <div class="space-y-2">
-            <h4 class="text-lg font-semibold">Diseño y Herramientas</h4>
+            <h4 class="text-lg font-semibold">{t.about.skillCategories.design}</h4>
             <ul class="flex flex-wrap gap-4">
               <li>
                 <i

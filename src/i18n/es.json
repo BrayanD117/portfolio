@@ -13,5 +13,23 @@
     "altPhoto": "Brayan Patiño - Desarrollador de Software",
     "buttonProjects": "Ver Proyectos",
     "buttonCV": "Ver CV"
+  },
+  "about": {
+    "title": "Sobre mí",
+    "description": "Soy un desarrollador de software apasionado con experiencia en desarrollo ágil y una amplia gama de tecnologías como React, Angular, Node.js, y más. Estoy comprometido con la calidad y la innovación tecnológica.",
+    "location": "Ibagué, Tolima, Colombia",
+    "interestsTitle": "Intereses",
+    "interestsText": "Escuchar música, jugar fútbol, y explorar nuevas tecnologías.",
+    "skillsTitle": "Habilidades Técnicas",
+    "skillCategories": {
+      "frontend": "Frontend",
+      "backend": "Backend",
+      "orm": "ORM",
+      "databases": "Bases de Datos",
+      "devops": "DevOps",
+      "infra": "Infraestructura y Sistemas Operativos",
+      "collaboration": "Colaboración y Gestión",
+      "design": "Diseño y Herramientas"
+    }
   }
 }
