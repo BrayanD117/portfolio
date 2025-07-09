@@ -1,0 +1,246 @@
+{
+  "home": {
+    "greeting": "¡Hola! Soy",
+    "title": "Ing. de Sistemas 👨‍💻",
+    "passion": "Soy un desarrollador de software apasionado por",
+    "typewriterStrings": [
+      "innovar con tecnología avanzada",
+      "resolver desafíos complejos",
+      "construir plataformas confiables",
+      "desarrollar aplicaciones de alto rendimiento",
+      "diseñar soluciones a medida"
+    ],
+    "altPhoto": "Brayan Patiño - Desarrollador de Software",
+    "buttonProjects": "Ver Proyectos",
+    "buttonCV": "Ver CV"
+  },
+  "about": {
+    "title": "Sobre mí",
+    "description": "Soy un desarrollador de software apasionado con experiencia en desarrollo ágil y una amplia gama de tecnologías como React, Angular, Node.js, y más. Estoy comprometido con la calidad y la innovación tecnológica.",
+    "location": "Ibagué, Tolima, Colombia",
+    "interestsTitle": "Intereses",
+    "interestsText": "Escuchar música, jugar fútbol, y explorar nuevas tecnologías.",
+    "skillsTitle": "Habilidades Técnicas",
+    "skillCategories": {
+      "frontend": "Frontend",
+      "backend": "Backend",
+      "orm": "ORM",
+      "databases": "Bases de Datos",
+      "devops": "DevOps",
+      "infra": "Infraestructura y Sistemas Operativos",
+      "collaboration": "Colaboración y Gestión",
+      "design": "Diseño y Herramientas"
+    }
+  },
+  "education": {
+    "title": "Educación",
+    "timeline": [
+      {
+        "degree": "Ingeniero de Sistemas",
+        "institution": "Universidad de Ibagué",
+        "date": "2020 - 2025",
+        "description": [
+          "Mi proyecto de grado fue el desarrollo de la plataforma MIRÓ, que puedes ver en la sección de proyectos.",
+          "Certificación de nivel de inglés B1 a través del centro de idiomas de la universidad."
+        ]
+      },
+      {
+        "degree": "Técnico en Sistemas",
+        "institution": "SENA",
+        "date": null,
+        "description": [
+          "Formación enfocada en el mantenimiento de sistemas, redes y fundamentos de desarrollo de software."
+        ]
+      }
+    ]
+  },
+  "certifications": {
+    "title": "Certificaciones",
+    "subtitle": "Certificaciones y cursos completados en diferentes áreas",
+    "linkText": "Ver certificado →",
+    "list": [
+      {
+        "category": "JavaScript",
+        "name": "Asincronismo con JavaScript",
+        "provider": "Platzi",
+        "pdf": "/certificates/asincronismo-js.pdf"
+      },
+      {
+        "category": "Cloud & Data",
+        "name": "AWS Academy Cloud Foundations",
+        "provider": "AWS",
+        "pdf": "/certificates/aws.pdf"
+      },
+      {
+        "category": "JavaScript",
+        "name": "Básico de JavaScript",
+        "provider": "Platzi",
+        "pdf": "/certificates/basico-javascript.pdf"
+      },
+      {
+        "category": "JavaScript",
+        "name": "Fundamentos de JavaScript",
+        "provider": "Platzi",
+        "pdf": "/certificates/javascript-fundamentos.pdf"
+      },
+      {
+        "category": "Java",
+        "name": "Java Básico",
+        "provider": "Platzi",
+        "pdf": "/certificates/java-basico.pdf"
+      },
+      {
+        "category": "Desarrollo Web",
+        "name": "Práctico de Frontend Developer",
+        "provider": "Platzi",
+        "pdf": "/certificates/frontend-developer-practico.pdf"
+      },
+      {
+        "category": "Desarrollo Web",
+        "name": "Profesional de Git y GitHub",
+        "provider": "Platzi",
+        "pdf": "/certificates/git-github.pdf"
+      },
+      {
+        "category": "Desarrollo Web",
+        "name": "Definitivo de HTML y CSS",
+        "provider": "Platzi",
+        "pdf": "/certificates/html-css.pdf"
+      },
+      {
+        "category": "Redes y Seguridad",
+        "name": "Introduction to Cybersecurity",
+        "provider": "Cisco",
+        "pdf": "/certificates/cybersecurity.pdf"
+      },
+      {
+        "category": "Redes y Seguridad",
+        "name": "Networks Basics",
+        "provider": "Cisco",
+        "pdf": "/certificates/networks.pdf"
+      },
+      {
+        "category": "Cloud & Data",
+        "name": "Power BI",
+        "provider": "Microsoft - Coursera",
+        "pdf": "/certificates/power-bi.pdf"
+      },
+      {
+        "category": "PHP",
+        "name": "Arreglos, Funciones y Estructuras de Control PHP",
+        "provider": "Platzi",
+        "pdf": "/certificates/php-arreglos-funciones.pdf"
+      },
+      {
+        "category": "PHP",
+        "name": "Programación Orientada a Objetos en PHP",
+        "provider": "Platzi",
+        "pdf": "/certificates/php-poo.pdf"
+      },
+      {
+        "category": "PHP",
+        "name": "Práctico de PHP",
+        "provider": "Platzi",
+        "pdf": "/certificates/php-practico.pdf"
+      },
+      {
+        "category": "Idiomas",
+        "name": "B1 English",
+        "provider": "Universidad de Ibagué",
+        "pdf": "/certificates/english.pdf"
+      }
+    ]
+  },
+  "experience": {
+    "title": "Experiencia Laboral",
+    "techTitle": "Tecnologías:",
+    "timeline": [
+      {
+        "role": "Desarrollador de Software Junior",
+        "company": "GanaGana",
+        "date": "Diciembre 2024 - Presente",
+        "description": "Automatización del proceso de solicitudes para el fondo de empleados, migrando de formatos manuales a una plataforma web. Esto redujo significativamente los tiempos de procesamiento para asociados y funcionarios.",
+        "technologies": ["PHP", "Angular", "GitHub"]
+      },
+      {
+        "role": "Practicante Universitario",
+        "company": "GanaGana",
+        "date": "Febrero 2023 - Diciembre 2024",
+        "description": "Apoyo al equipo de desarrollo en proyectos internos, adquiriendo experiencia en los procesos y tecnologías de la empresa.",
+        "technologies": []
+      },
+      {
+        "role": "Desarrollador Freelance",
+        "company": "Independiente",
+        "date": "Noviembre 2022 - Presente",
+        "description": "Desarrollo de soluciones web a medida para diversos clientes, gestionando proyectos desde la conceptualización hasta el despliegue.",
+        "technologies": []
+      }
+    ]
+  },
+  "projects": {
+    "title": "Mis Proyectos",
+    "subtitle": "Aquí están algunos de los proyectos en los que he trabajado.",
+    "linkText": "Visitar Proyecto →",
+    "list": [
+      {
+        "name": "MIRÓ",
+        "logo": { "src": "/images/miro-logo.webp", "alt": "Logo de MIRÓ" },
+        "description": "MIRÓ es una plataforma tecnológica que centraliza y estandariza los datos para los procesos de acreditación académica en la Universidad de Ibagué. Resuelve problemas de dispersión de datos y falta de automatización, mejorando la calidad, accesibilidad y confiabilidad de la información.",
+        "technologies": [
+          "devicon-nodejs-plain-wordmark text-green-400",
+          "devicon-express-original text-gray-300",
+          "devicon-nextjs-plain text-white",
+          "devicon-mongodb-plain text-green-400",
+          "devicon-ubuntu-plain text-orange-400",
+          "devicon-github-original text-gray-400"
+        ],
+        "url": "https://miro.unibague.edu.co/",
+        "images": [
+          { "src": "/images/miro1.webp", "alt": "Dashboard de MIRÓ" },
+          { "src": "/images/miro2.webp", "alt": "Estadísticas de MIRÓ" },
+          { "src": "/images/miro3.webp", "alt": "Reportes de MIRÓ" }
+        ]
+      },
+      {
+        "name": "FEMSEAPTO",
+        "logo": {
+          "src": "/images/femseapto-logo.webp",
+          "alt": "Logo de FEMSEAPTO"
+        },
+        "description": "FEMSEAPTO es una plataforma diseñada para los asociados del fondo de empleados, permitiéndoles gestionar sus créditos, ahorros y cuotas pendientes de manera eficiente. También facilita la consulta de estados financieros, brindando accesibilidad y optimización en los procesos internos.",
+        "technologies": [
+          "devicon-angularjs-plain text-red-400",
+          "devicon-php-plain text-purple-400",
+          "devicon-mysql-plain text-blue-400",
+          "devicon-github-original text-gray-400"
+        ],
+        "url": "https://femseapto.com.co/",
+        "images": [
+          { "src": "/images/fem1.webp", "alt": "Portal de FEMSEAPTO" },
+          { "src": "/images/fem2.webp", "alt": "Dashboard de FEMSEAPTO" },
+          { "src": "/images/fem3.webp", "alt": "Servicios de FEMSEAPTO" }
+        ]
+      }
+    ]
+  },
+  "contact": {
+    "title": "Contáctame",
+    "subtitle": "¡Conectemos! Puedes encontrarme en las siguientes plataformas.",
+    "links": {
+      "linkedin": "LinkedIn",
+      "github": "GitHub",
+      "email": "Correo"
+    }
+  },
+  "footer": {
+    "copyright": "&copy; 2025 Brayan Patiño. Todos los derechos reservados.",
+    "ariaGithub": "GitHub de Brayan Patiño",
+    "ariaLinkedin": "LinkedIn de Brayan Patiño"
+  },
+  "notFound": {
+    "title": "¡Ups! Aquí no hay nada...",
+    "subtitle": "Parece que aquí no está lo que buscas.",
+    "buttonText": "Volver al inicio"
+  }
+}
