@@ -221,6 +221,22 @@
           { "src": "/images/fem2.webp", "alt": "Dashboard de FEMSEAPTO" },
           { "src": "/images/fem3.webp", "alt": "Servicios de FEMSEAPTO" }
         ]
+      },
+      {
+        "name": "QR Keep",
+        "logo": { "src": "/images/qrkeep-logo.webp", "alt": "Logo de QR Keep" },
+        "description": "QR Keep es una plataforma que permite a los usuarios generar y gestionar códigos QR de manera eficiente. Facilita la creación de códigos personalizados y su seguimiento, mejorando la interacción y el acceso a la información.",
+        "technologies": [
+          "devicon-nextjs-plain text-white",
+          "devicon-github-original text-gray-400",
+          "devicon-vercel-original text-black"
+        ],
+        "url": "https://qr.brayanpatino.com/",
+        "images": [
+          { "src": "/images/qr1.webp", "alt": "Inicio de QR Keep" },
+          { "src": "/images/qr2.webp", "alt": "Funciones de QR Keep" },
+          { "src": "/images/qr3.webp", "alt": "Historial de QR Keep" }
+        ]
       }
     ]
   },

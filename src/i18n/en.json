@@ -221,6 +221,22 @@
           { "src": "/images/fem2.webp", "alt": "FEMSEAPTO Dashboard" },
           { "src": "/images/fem3.webp", "alt": "FEMSEAPTO Services" }
         ]
+      },
+      {
+        "name": "QR Keep",
+        "logo": { "src": "/images/qrkeep-logo.webp", "alt": "Logo de QR Keep" },
+        "description": "QR Keep is a web application for generating and managing QR codes. It allows users to create, store, and retrieve QR codes easily, providing a user-friendly interface and efficient functionality.",
+        "technologies": [
+          "devicon-nextjs-plain text-white",
+          "devicon-github-original text-gray-400",
+          "devicon-vercel-original text-black"
+        ],
+        "url": "https://qr.brayanpatino.com/",
+        "images": [
+          { "src": "/images/qr1.webp", "alt": "Inicio de QR Keep" },
+          { "src": "/images/qr2.webp", "alt": "Funciones de QR Keep" },
+          { "src": "/images/qr3.webp", "alt": "Historial de QR Keep" }
+        ]
       }
     ]
   },
