@@ -12,7 +12,8 @@
     ],
     "altPhoto": "Brayan Patiño - Software Developer",
     "buttonProjects": "View Projects",
-    "buttonCV": "View CV"
+    "buttonCV": "View CV",
+    "cvLink": "/cv-en.pdf"
   },
   "about": {
     "title": "About Me",

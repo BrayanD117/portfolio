@@ -12,7 +12,8 @@
     ],
     "altPhoto": "Brayan Patiño - Desarrollador de Software",
     "buttonProjects": "Ver Proyectos",
-    "buttonCV": "Ver CV"
+    "buttonCV": "Ver CV",
+    "cvLink": "/cv-es.pdf"
   },
   "about": {
     "title": "Sobre mí",
