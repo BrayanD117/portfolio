@@ -61,16 +61,10 @@
     "linkText": "Ver certificado →",
     "list": [
       {
-        "category": "JavaScript",
-        "name": "Asincronismo con JavaScript",
+        "category": "HTML y CSS",
+        "name": "Definitivo de HTML y CSS",
         "provider": "Platzi",
-        "pdf": "/certificates/asincronismo-js.pdf"
-      },
-      {
-        "category": "Cloud & Data",
-        "name": "AWS Academy Cloud Foundations",
-        "provider": "AWS",
-        "pdf": "/certificates/aws.pdf"
+        "pdf": "/certificates/html-css.pdf"
       },
       {
         "category": "JavaScript",
@@ -85,16 +79,16 @@
         "pdf": "/certificates/javascript-fundamentos.pdf"
       },
       {
-        "category": "Java",
-        "name": "Java Básico",
+        "category": "JavaScript",
+        "name": "Asincronismo con JavaScript",
         "provider": "Platzi",
-        "pdf": "/certificates/java-basico.pdf"
+        "pdf": "/certificates/asincronismo-js.pdf"
       },
       {
         "category": "Desarrollo Web",
-        "name": "Práctico de Frontend Developer",
+        "name": "ReactJS",
         "provider": "Platzi",
-        "pdf": "/certificates/frontend-developer-practico.pdf"
+        "pdf": "/certificates/reactjs.pdf"
       },
       {
         "category": "Desarrollo Web",
@@ -103,28 +97,10 @@
         "pdf": "/certificates/git-github.pdf"
       },
       {
-        "category": "Desarrollo Web",
-        "name": "Definitivo de HTML y CSS",
+        "category": "Java",
+        "name": "Java Básico",
         "provider": "Platzi",
-        "pdf": "/certificates/html-css.pdf"
-      },
-      {
-        "category": "Redes y Seguridad",
-        "name": "Introduction to Cybersecurity",
-        "provider": "Cisco",
-        "pdf": "/certificates/cybersecurity.pdf"
-      },
-      {
-        "category": "Redes y Seguridad",
-        "name": "Networks Basics",
-        "provider": "Cisco",
-        "pdf": "/certificates/networks.pdf"
-      },
-      {
-        "category": "Cloud & Data",
-        "name": "Power BI",
-        "provider": "Microsoft - Coursera",
-        "pdf": "/certificates/power-bi.pdf"
+        "pdf": "/certificates/java-basico.pdf"
       },
       {
         "category": "PHP",
@@ -143,6 +119,91 @@
         "name": "Práctico de PHP",
         "provider": "Platzi",
         "pdf": "/certificates/php-practico.pdf"
+      },
+      {
+        "category": "Base de Datos",
+        "name": "Base de datos NoSQL",
+        "provider": "Platzi",
+        "pdf": "/certificates/db-nosql.pdf"
+      },
+      {
+        "category": "Base de Datos",
+        "name": "MySQL y MariaDB",
+        "provider": "Platzi",
+        "pdf": "/certificates/mysql-mariadb.pdf"
+      },
+      {
+        "category": "Base de Datos",
+        "name": "SQL y MySQL",
+        "provider": "Platzi",
+        "pdf": "/certificates/sql-mysql.pdf"
+      },
+      {
+        "category": "Base de Datos",
+        "name": "PostgreSQL",
+        "provider": "Platzi",
+        "pdf": "/certificates/postgresql.pdf"
+      },
+      {
+        "category": "Desarrollo Web",
+        "name": "Fundamentos de desarrollo de Software",
+        "provider": "Platzi",
+        "pdf": "/certificates/software-basic.pdf"
+      },
+      {
+        "category": "Desarrollo Web",
+        "name": "Frontend Developer",
+        "provider": "Platzi",
+        "pdf": "/certificates/frontend-developer.pdf"
+      },
+      {
+        "category": "Desarrollo Web",
+        "name": "Práctico de Frontend Developer",
+        "provider": "Platzi",
+        "pdf": "/certificates/frontend-developer-practico.pdf"
+      },
+      {
+        "category": "Terminal",
+        "name": "Manejo de Terminal",
+        "provider": "Platzi",
+        "pdf": "/certificates/cli.pdf"
+      },
+      {
+        "category": "Sistemas Operativos",
+        "name": "Linux",
+        "provider": "Platzi",
+        "pdf": "/certificates/linux.pdf"
+      },
+      {
+        "category": "Sistemas Operativos",
+        "name": "MacOS",
+        "provider": "Platzi",
+        "pdf": "/certificates/macos.pdf"
+
+      },
+      {
+        "category": "Redes y Seguridad",
+        "name": "Introduction to Cybersecurity",
+        "provider": "Cisco",
+        "pdf": "/certificates/cybersecurity.pdf"
+      },
+      {
+        "category": "Redes y Seguridad",
+        "name": "Networks Basics",
+        "provider": "Cisco",
+        "pdf": "/certificates/networks.pdf"
+      },
+      {
+        "category": "Cloud & Data",
+        "name": "AWS Academy Cloud Foundations",
+        "provider": "AWS",
+        "pdf": "/certificates/aws.pdf"
+      },
+      {
+        "category": "Cloud & Data",
+        "name": "Power BI",
+        "provider": "Microsoft - Coursera",
+        "pdf": "/certificates/power-bi.pdf"
       },
       {
         "category": "Idiomas",
