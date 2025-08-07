@@ -286,7 +286,7 @@
       },
       {
         "name": "QR Keep",
-        "logo": { "src": "/images/qrkeep-logo.webp", "alt": "Logo de QR Keep" },
+        "logo": { "src": "/images/qrkeepLogo.webp", "alt": "Logo de QR Keep" },
         "description": "QR Keep es una plataforma que permite a los usuarios generar y gestionar códigos QR de manera eficiente. Facilita la creación de códigos personalizados y su seguimiento, mejorando la interacción y el acceso a la información.",
         "technologies": [
           "devicon-nextjs-plain text-white",

@@ -285,7 +285,7 @@
       },
       {
         "name": "QR Keep",
-        "logo": { "src": "/images/qrkeep-logo.webp", "alt": "Logo de QR Keep" },
+        "logo": { "src": "/images/qrkeepLogo.webp", "alt": "Logo de QR Keep" },
         "description": "QR Keep is a web application for generating and managing QR codes. It allows users to create, store, and retrieve QR codes easily, providing a user-friendly interface and efficient functionality.",
         "technologies": [
           "devicon-nextjs-plain text-white",
