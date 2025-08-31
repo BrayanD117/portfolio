@@ -221,7 +221,7 @@
         "company": "GanaGana",
         "date": "December 2024 - Present",
         "description": "Automation of the application process for the employee fund, migrating from manual formats to a web platform. This significantly reduced processing times for associates and officials.",
-        "technologies": ["PHP", "Angular", "GitHub"]
+        "technologies": []
       },
       {
         "role": "University Intern",
@@ -261,6 +261,27 @@
           { "src": "/images/miro1.webp", "alt": "MIRÓ Dashboard" },
           { "src": "/images/miro2.webp", "alt": "MIRÓ Statistics" },
           { "src": "/images/miro3.webp", "alt": "MIRÓ Reports" }
+        ]
+      },
+      {
+        "name": "RIFETÓN",
+        "logo": { "src": "/images/rifeton-logo.webp", "alt": "Rifetón Logo" },
+        "description": "Rifetón is an online raffle platform that allows users to participate in raffles easily and securely. With a focus on transparency and trust, Rifetón seeks to revolutionize the way people participate in raffles and sweepstakes.",
+        "technologies": [
+          "devicon-nodejs-plain-wordmark text-green-400",
+          "devicon-express-original text-gray-300",
+          "devicon-nextjs-plain text-white",
+          "devicon-postgresql-plain text-green-400",
+          "devicon-ubuntu-plain text-orange-400",
+          "devicon-github-original text-gray-400",
+          "devicon-sentry-original text-purple-400",
+          "devicon-cloudflare-plain text-orange-400"
+        ],
+        "url": "https://elrifeton.com.co/",
+        "images": [
+          { "src": "/images/rifeton1.webp", "alt": "Rifetón Dashboard" },
+          { "src": "/images/rifeton2.webp", "alt": "Rifetón Statistics" },
+          { "src": "/images/rifeton3.webp", "alt": "Rifetón Reports" }
         ]
       },
       {

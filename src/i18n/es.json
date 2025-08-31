@@ -222,7 +222,7 @@
         "company": "GanaGana",
         "date": "Diciembre 2024 - Presente",
         "description": "Automatización del proceso de solicitudes para el fondo de empleados, migrando de formatos manuales a una plataforma web. Esto redujo significativamente los tiempos de procesamiento para asociados y funcionarios.",
-        "technologies": ["PHP", "Angular", "GitHub"]
+        "technologies": []
       },
       {
         "role": "Practicante Universitario",
@@ -262,6 +262,27 @@
           { "src": "/images/miro1.webp", "alt": "Dashboard de MIRÓ" },
           { "src": "/images/miro2.webp", "alt": "Estadísticas de MIRÓ" },
           { "src": "/images/miro3.webp", "alt": "Reportes de MIRÓ" }
+        ]
+      },
+      {
+        "name": "RIFETÓN",
+        "logo": { "src": "/images/rifeton-logo.webp", "alt": "Logo de Rifetón" },
+        "description": "Rifetón es una plataforma de rifas en línea que permite a los usuarios participar en rifas de manera fácil y segura. Con un enfoque en la transparencia y la confianza, Rifetón busca revolucionar la forma en que las personas participan en rifas y sorteos.",
+        "technologies": [
+          "devicon-nodejs-plain-wordmark text-green-400",
+          "devicon-express-original text-gray-300",
+          "devicon-nextjs-plain text-white",
+          "devicon-postgresql-plain text-green-400",
+          "devicon-ubuntu-plain text-orange-400",
+          "devicon-github-original text-gray-400",
+          "devicon-sentry-original text-purple-400",
+          "devicon-cloudflare-plain text-orange-400"
+        ],
+        "url": "https://elrifeton.com.co/",
+        "images": [
+          { "src": "/images/rifeton1.webp", "alt": "Dashboard de Rifetón" },
+          { "src": "/images/rifeton2.webp", "alt": "Estadísticas de Rifetón" },
+          { "src": "/images/rifeton3.webp", "alt": "Reportes de Rifetón" }
         ]
       },
       {
