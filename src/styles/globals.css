@@ -1,13 +1,3 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-/* Force icon colors to override any global styles */
-.tech-icon {
-  color: inherit !important;
-}
-
-/* Prevent DevIcons from being overridden by global text colors */
-[class*="devicon-"] {
-  color: inherit !important;
-}

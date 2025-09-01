@@ -32,26 +32,9 @@ const t = locale === 'es' ? es : en;
           <p class="text-lg text-gray-300">{project.description}</p>
           
           <div class="flex flex-wrap items-center space-x-4 mt-4">
-            {project.technologies.map(techClass => {
-              let color = '';
-              if (techClass.includes('text-green-400')) color = '#4ade80';
-              else if (techClass.includes('text-gray-300')) color = '#d1d5db';
-              else if (techClass.includes('text-white')) color = '#ffffff';
-              else if (techClass.includes('text-blue-400')) color = '#60a5fa';
-              else if (techClass.includes('text-orange-400')) color = '#fb923c';
-              else if (techClass.includes('text-gray-400')) color = '#9ca3af';
-              else if (techClass.includes('text-purple-400')) color = '#c084fc';
-              else if (techClass.includes('text-red-400')) color = '#f87171';
-              else if (techClass.includes('text-black')) color = '#000000';
-              
-              const iconClass = techClass.split(' ')[0];
-              return (
-                <i 
-                  class:list={[iconClass, "text-3xl"]} 
-                  style={`color: ${color} !important;`}
-                />
-              );
-            })}
+            {project.technologies.map(techClass => (
+              <i class:list={[techClass, "text-3xl"]} />
+            ))}
           </div>
 
           <a
