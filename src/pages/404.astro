@@ -11,15 +11,232 @@ const homeLink = getRelativeLocaleUrl(lang);
 ---
 
 <Layout>
-  <section class="bg-gradient-to-br from-slate-900 to-slate-700 text-white min-h-screen flex items-center justify-center">
-    <div class="container mx-auto px-6 sm:px-12 text-center space-y-6">
-      <i class="fas fa-rocket text-6xl text-blue-400"></i>
-      <h1 class="text-5xl font-bold">{t.notFound.title}</h1>
-      <p class="text-lg text-gray-300">{t.notFound.subtitle}</p>
-      <a href={homeLink} class="bg-blue-500 text-white px-6 py-2 rounded-lg hover:bg-blue-600 inline-flex items-center space-x-2">
-        <i class="fas fa-home"></i>
-        <span>{t.notFound.buttonText}</span>
-      </a>
+  <section class="bg-gradient-to-br from-slate-900 to-slate-700 text-white min-h-screen flex items-center justify-center relative overflow-hidden">
+    <div class="absolute inset-0 overflow-hidden">
+      <div class="stars"></div>
+      <div class="stars2"></div>
+      <div class="stars3"></div>
+    </div>
+
+    <div class="floating-planet absolute top-20 right-20 w-32 h-32 bg-gradient-to-br from-blue-400 to-slate-500 rounded-full opacity-20 animate-float hidden lg:block"></div>
+    
+    <div class="container mx-auto px-6 sm:px-12 text-center space-y-8 relative z-10">
+      <div class="relative inline-block">
+        <i class="fas fa-rocket text-8xl text-blue-400 rocket-icon"></i>
+      </div>
+
+      <div class="space-y-4">
+        <h1 class="text-6xl md:text-8xl font-bold bg-gradient-to-r from-blue-400 to-blue-600 bg-clip-text text-transparent fade-in-up">
+          404
+        </h1>
+        <h2 class="text-2xl md:text-3xl font-semibold text-blue-300 fade-in-up" style="animation-delay: 0.5s">
+          {t.notFound.title}
+        </h2>
+        <p class="text-lg text-gray-300 max-w-md mx-auto fade-in-up" style="animation-delay: 1s">
+          {t.notFound.subtitle}
+        </p>
+      </div>
+
+      <div class="bg-slate-800/50 backdrop-blur-sm rounded-xl p-6 max-w-lg mx-auto border border-slate-600 fade-in-up" style="animation-delay: 1.5s">
+        <p class="text-blue-200 text-sm mb-2">
+          <i class="fas fa-info-circle mr-2"></i>
+          {lang === 'es' ? 'Mientras navegas de regreso...' : 'While you navigate back...'}
+        </p>
+        <div class="flex items-center justify-center space-x-4 text-sm text-gray-400">
+          <div class="flex items-center">
+            <div class="loading-spinner mr-2"></div>
+            <span id="loading-text">{lang === 'es' ? 'Recalibrando coordenadas' : 'Recalibrating coordinates'}</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-4 fade-in-up" style="animation-delay: 2s">
+        <a href={homeLink} class="group bg-gradient-to-r from-blue-500 to-blue-700 text-white px-8 py-3 rounded-full hover:from-blue-600 hover:to-blue-800 transition-all duration-300 transform hover:scale-105 flex items-center space-x-2 shadow-lg hover:shadow-xl">
+          <i class="fas fa-home group-hover:animate-pulse"></i>
+          <span>{t.notFound.buttonText}</span>
+        </a>
+      </div>
+
+      <div class="grid grid-cols-2 md:grid-cols-3 gap-4 mt-12 max-w-2xl mx-auto fade-in-up" style="animation-delay: 2.5s">
+        <a href={`${homeLink}#about`} class="glass-card group">
+          <i class="fas fa-user text-blue-400 text-2xl mb-2 group-hover:scale-110 transition-transform"></i>
+          <p class="text-sm text-gray-300">{lang === 'es' ? 'Sobre Mí' : 'About'}</p>
+        </a>
+        <a href={`${homeLink}#projects`} class="glass-card group">
+          <i class="fas fa-code text-blue-500 text-2xl mb-2 group-hover:scale-110 transition-transform"></i>
+          <p class="text-sm text-gray-300">{lang === 'es' ? 'Proyectos' : 'Projects'}</p>
+        </a>
+        <a href={`${homeLink}#experience`} class="glass-card group">
+          <i class="fas fa-briefcase text-blue-300 text-2xl mb-2 group-hover:scale-110 transition-transform"></i>
+          <p class="text-sm text-gray-300">{lang === 'es' ? 'Experiencia' : 'Experience'}</p>
+        </a>
+      </div>
     </div>
   </section>
 </Layout>
+
+<style>
+  .stars, .stars2, .stars3 {
+    position: absolute;
+    width: 3px;
+    height: 3px;
+    border-radius: 50%;
+    box-shadow: 0 0 0 1px rgba(255,255,255,0.5);
+    animation: animStar 50s linear infinite;
+  }
+  
+  .stars {
+    animation-duration: 50s;
+    animation-name: animStar;
+    background: transparent;
+    box-shadow: 
+      778px 1267px #fff, 1482px 871px #fff, 1026px 906px #fff,
+      154px 702px #fff, 454px 868px #fff, 542px 1271px #fff,
+      1119px 1085px #fff, 1722px 1343px #fff, 166px 1448px #fff;
+  }
+  
+  .stars2 {
+    animation-duration: 100s;
+    background: transparent;
+    box-shadow: 
+      481px 571px #fff, 1518px 99px #fff, 1531px 1103px #fff,
+      1115px 1556px #fff, 1501px 527px #fff, 704px 1206px #fff,
+      1011px 172px #fff, 1428px 1048px #fff, 1287px 1862px #fff;
+  }
+  
+  .stars3 {
+    animation-duration: 150s;
+    background: transparent;
+    box-shadow: 
+      1850px 455px #fff, 155px 1045px #fff, 1645px 1291px #fff,
+      729px 1640px #fff, 1860px 1201px #fff, 1458px 1335px #fff,
+      1913px 1112px #fff, 1815px 1003px #fff, 1093px 1690px #fff;
+  }
+
+  @keyframes animStar {
+    from { transform: translateY(0px) }
+    to { transform: translateY(-2000px) }
+  }
+
+  .rocket-icon {
+    animation: rocketFloat 3s ease-in-out infinite;
+  }
+
+  @keyframes rocketFloat {
+    0%, 100% { transform: translateY(0px) rotate(-10deg); }
+    50% { transform: translateY(-20px) rotate(-15deg); }
+  }
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0px) rotate(0deg); }
+    50% { transform: translateY(-30px) rotate(180deg); }
+  }
+
+  .animate-float {
+    animation: float 8s ease-in-out infinite;
+  }
+
+  .fade-in-up {
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeInUp 0.8s ease-out forwards;
+  }
+
+  @keyframes fadeInUp {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .glass-card {
+    @apply p-4 rounded-lg bg-white/5 backdrop-blur-sm border border-white/10 hover:bg-white/10 transition-all duration-300 text-center;
+  }
+
+  .loading-spinner {
+    width: 12px;
+    height: 12px;
+    border: 2px solid #374151;
+    border-top: 2px solid #3b82f6;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+  }
+
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+</style>
+
+<script>
+
+  document.addEventListener('click', function(e) {
+    const colors = ['#3b82f6', '#8b5cf6', '#ec4899', '#10b981'];
+    
+    for (let i = 0; i < 6; i++) {
+      const particle = document.createElement('div');
+      particle.style.position = 'fixed';
+      particle.style.left = e.clientX + 'px';
+      particle.style.top = e.clientY + 'px';
+      particle.style.width = '6px';
+      particle.style.height = '6px';
+      particle.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+      particle.style.borderRadius = '50%';
+      particle.style.pointerEvents = 'none';
+      particle.style.zIndex = '9999';
+      
+      const angle = (Math.PI * 2 * i) / 6;
+      const distance = 50 + Math.random() * 50;
+      const duration = 600 + Math.random() * 400;
+      
+      particle.animate([
+        {
+          transform: 'translate(0, 0) scale(1)',
+          opacity: 1
+        },
+        {
+          transform: `translate(${Math.cos(angle) * distance}px, ${Math.sin(angle) * distance}px) scale(0)`,
+          opacity: 0
+        }
+      ], {
+        duration: duration,
+        easing: 'cubic-bezier(0.25, 0.46, 0.45, 0.94)'
+      });
+      
+      document.body.appendChild(particle);
+      
+      setTimeout(() => {
+        if (document.body.contains(particle)) {
+          document.body.removeChild(particle);
+        }
+      }, duration);
+    }
+  });
+
+  const loadingMessages = {
+    es: [
+      'Recalibrando coordenadas',
+      'Buscando en el espacio',
+      'Consultando el mapa estelar',
+      'Pidiendo direcciones a un astronauta'
+    ],
+    en: [
+      'Recalibrating coordinates',
+      'Searching in space',
+      'Consulting star map',
+      'Asking an astronaut for directions'
+    ]
+  };
+
+  const lang = window.location.pathname.startsWith('/es') ? 'es' : 'en';
+  const messages = loadingMessages[lang];
+  const loadingTextElement = document.getElementById('loading-text');
+  
+  let messageIndex = 0;
+  setInterval(() => {
+    messageIndex = (messageIndex + 1) % messages.length;
+    if (loadingTextElement) {
+      loadingTextElement.textContent = messages[messageIndex];
+    }
+  }, 3000);
+</script>
