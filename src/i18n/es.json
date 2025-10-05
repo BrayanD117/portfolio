@@ -25,6 +25,7 @@
     "skillCategories": {
       "frontend": "Frontend",
       "backend": "Backend",
+      "mobile": "Móvil",
       "orm": "ORM",
       "databases": "Bases de Datos",
       "devops": "DevOps",
