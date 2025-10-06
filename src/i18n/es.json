@@ -1,8 +1,8 @@
 {
   "home": {
     "greeting": "¡Hola! Soy",
-    "title": "Ing. de Sistemas 👨‍💻",
-    "passion": "Soy un desarrollador de software apasionado por",
+    "title": "Ing. de Sistemas - Desarrollador Fullstack 👨‍💻",
+    "passion": "Soy un desarrollador fullstack apasionado por",
     "typewriterStrings": [
       "innovar con tecnología avanzada",
       "resolver desafíos complejos",
@@ -10,14 +10,14 @@
       "desarrollar aplicaciones de alto rendimiento",
       "diseñar soluciones a medida"
     ],
-    "altPhoto": "Brayan Patiño - Desarrollador de Software",
+    "altPhoto": "Brayan Patiño - Ingeniero de Sistemas & Desarrollador Fullstack",
     "buttonProjects": "Ver Proyectos",
     "buttonCV": "Ver CV",
     "cvLink": "/cv-es.pdf"
   },
   "about": {
     "title": "Sobre mí",
-    "description": "Soy un desarrollador de software apasionado con experiencia en desarrollo ágil y una amplia gama de tecnologías como React, Angular, Node.js, y más. Estoy comprometido con la calidad y la innovación tecnológica.",
+    "description": "Soy un ingeniero de sistemas y desarrollador fullstack apasionado con experiencia en desarrollo ágil y una amplia gama de tecnologías como React, Angular, Node.js, y más. Estoy comprometido con la calidad y la innovación tecnológica.",
     "location": "Ibagué, Tolima, Colombia",
     "interestsTitle": "Intereses",
     "interestsText": "Escuchar música, jugar fútbol, y explorar nuevas tecnologías.",

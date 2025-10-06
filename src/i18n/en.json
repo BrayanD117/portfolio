@@ -1,8 +1,8 @@
 {
   "home": {
     "greeting": "Hello! I'm",
-    "title": "Software Engineer 👨‍💻",
-    "passion": "I am a software developer passionate about",
+    "title": "Systems Engineer - Fullstack Developer 👨‍💻",
+    "passion": "I am a fullstack developer passionate about",
     "typewriterStrings": [
       "innovating with advanced technology",
       "solving complex challenges",
@@ -10,14 +10,14 @@
       "developing high-performance applications",
       "designing custom solutions"
     ],
-    "altPhoto": "Brayan Patiño - Software Developer",
+    "altPhoto": "Brayan Patiño - Systems Engineer & Fullstack Developer",
     "buttonProjects": "View Projects",
     "buttonCV": "View CV",
     "cvLink": "/cv-en.pdf"
   },
   "about": {
     "title": "About Me",
-    "description": "I am a passionate software developer with experience in agile development and a wide range of technologies like React, Angular, Node.js, and more. I am committed to quality and technological innovation.",
+    "description": "I am a passionate systems engineer and fullstack developer with experience in agile development and a wide range of technologies like React, Angular, Node.js, and more. I am committed to quality and technological innovation.",
     "location": "Ibagué, Tolima, Colombia",
     "interestsTitle": "Interests",
     "interestsText": "Listening to music, playing soccer, and exploring new technologies.",
