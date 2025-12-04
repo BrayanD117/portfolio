@@ -3,281 +3,367 @@ import "../components/styles/AboutSection.css";
 import en from "../i18n/en.json";
 import es from "../i18n/es.json";
 const locale = Astro.currentLocale;
-const t = locale === 'es' ? es : en;
+const t = locale === "es" ? es : en;
+
+const techStack = {
+  frontend: [
+    { name: "Angular", icon: "devicon-angularjs-plain", color: "text-red-400" },
+    {
+      name: "React.js",
+      icon: "devicon-react-original",
+      color: "text-cyan-400",
+    },
+    { name: "Next.js", icon: "devicon-nextjs-plain", color: "text-white" },
+    {
+      name: "Tailwind CSS",
+      icon: "devicon-tailwindcss-plain",
+      color: "text-cyan-400",
+    },
+    { name: "Figma", icon: "devicon-figma-plain", color: "text-pink-400" },
+  ],
+  backend: [
+    { name: "Node.js", icon: "devicon-nodejs-plain", color: "text-green-400" },
+    {
+      name: "Express",
+      icon: "devicon-express-original",
+      color: "text-gray-300",
+    },
+    { name: "NestJS", icon: "devicon-nestjs-plain", color: "text-red-400" },
+    { name: "PHP", icon: "devicon-php-plain", color: "text-purple-400" },
+  ],
+  database: [
+    {
+      name: "PostgreSQL",
+      icon: "devicon-postgresql-plain",
+      color: "text-blue-400",
+    },
+    { name: "MongoDB", icon: "devicon-mongodb-plain", color: "text-green-400" },
+    { name: "Oracle", icon: "devicon-oracle-original", color: "text-red-400" },
+    { name: "MariaDB", icon: "devicon-mariadb-plain", color: "text-blue-300" },
+  ],
+  tools: [
+    {
+      name: "Git & GitHub",
+      icon: "devicon-github-original",
+      color: "text-gray-400",
+    },
+    { name: "Docker", icon: "devicon-docker-plain", color: "text-blue-400" },
+    { name: "CI/CD", icon: "devicon-circleci-plain", color: "text-green-400" },
+    { name: "Postman", icon: "fas fa-cube", color: "text-orange-400" },
+  ],
+};
 ---
 
-<section id="about" class="about-section py-16 reveal">
-  <div class="container mx-auto px-6 sm:px-12">
-    <h2 class="text-4xl sm:text-4xl font-bold text-center mb-12">{t.about.title}</h2>
+<section
+  id="about"
+  class="relative bg-gradient-to-br from-[#1e293b] via-[#0f172a] to-[#1e293b] text-white py-20 overflow-hidden"
+>
+  <div
+    class="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,rgba(16,185,129,0.05),transparent_50%)]"
+  >
+  </div>
 
-    <!-- Personal Info -->
-    <div class="max-w-4xl mx-auto mb-12">
-      <div class="text-center space-y-6">
-        <p class="text-lg">
-          {t.about.description}
-        </p>
-        <div class="flex items-center justify-center space-x-4">
-          <i class="fas fa-map-marker-alt text-red-500 text-2xl"></i>
-          <span>{t.about.location}</span>
+  <div class="container mx-auto px-6 sm:px-12 relative z-10">
+    <div class="text-center mb-16 about-header">
+      <span class="text-emerald-400 text-sm font-mono mb-2 block">01.</span>
+      <h2 class="text-4xl sm:text-5xl font-bold mb-4">{t.about.title}</h2>
+      <div
+        class="w-20 h-1 bg-gradient-to-r from-emerald-400 to-cyan-400 mx-auto"
+      >
+      </div>
+    </div>
+
+    <div class="grid lg:grid-cols-2 gap-12 items-start mb-20">
+      <div class="terminal-container">
+        <div
+          class="bg-slate-800/50 backdrop-blur-sm rounded-lg border border-slate-700/50 shadow-2xl overflow-hidden"
+        >
+          <div
+            class="bg-slate-900/80 px-4 py-3 flex items-center gap-2 border-b border-slate-700/50"
+          >
+            <div class="flex gap-2">
+              <div class="w-3 h-3 rounded-full bg-red-500"></div>
+              <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
+              <div class="w-3 h-3 rounded-full bg-green-500"></div>
+            </div>
+            <span class="text-sm text-gray-400 ml-4 font-mono"
+              >~/brayan-dev/bio.json</span
+            >
+          </div>
+
+          <div class="p-6 font-mono text-sm leading-relaxed terminal-content">
+            <div class="space-y-1">
+              <div>
+                <span class="text-gray-500">→</span>
+                <span class="text-cyan-400">cat</span>
+                <span class="text-gray-300">bio.json</span>
+              </div>
+              <div class="mt-4 text-gray-300">
+                <div>
+                  <span class="text-purple-400">{}</span>
+                  <div class="ml-4">
+                    <span class="text-emerald-400">"name"</span>: <span
+                      class="text-yellow-300">"Brayan Patiño"</span
+                    >,
+                  </div>
+                  <div class="ml-4">
+                    <span class="text-emerald-400">"role"</span>: <span
+                      class="text-yellow-300">"Systems Engineer"</span
+                    >,
+                  </div>
+                  <div class="ml-4">
+                    <span class="text-emerald-400">"location"</span>: <span
+                      class="text-yellow-300">"Ibagué, Colombia"</span
+                    >,
+                  </div>
+                  <div class="ml-4">
+                    <span class="text-emerald-400">"passion"</span>: <span
+                      class="text-yellow-300"
+                      >"Building high-impact digital products"</span
+                    >,
+                  </div>
+                  <div class="ml-4">
+                    <span class="text-emerald-400">"focus"</span>: <span
+                      class="text-purple-400">[</span
+                    ><span class="text-yellow-300">"Agile Development"</span>, <span
+                      class="text-yellow-300">"Scalability"</span
+                    >, <span class="text-yellow-300">"Innovation"</span><span
+                      class="text-purple-400">]</span
+                    >,
+                  </div>
+                  <div class="ml-4">
+                    <span class="text-emerald-400">"status"</span>: <span
+                      class="text-yellow-300"
+                      >"Currently automating processes at GanaGana"</span>
+                  </div>
+                  <div><span class="text-purple-400"></span></div>
+                </div>
+              </div>
+              <div class="mt-4">
+                <span class="text-gray-500">→</span>
+                <span class="blinking-cursor">_</span>
+              </div>
+            </div>
+          </div>
         </div>
-        <div>
-          <h3 class="text-xl font-bold">{t.about.interestsTitle}</h3>
-          <p>{t.about.interestsText}</p>
+      </div>
+
+      <div class="space-y-6 about-content">
+        <div class="space-y-4">
+          <p class="text-lg text-gray-300 leading-relaxed">
+            {t.about.description}
+          </p>
+
+          <div class="flex items-center gap-3 text-gray-400">
+            <i class="fas fa-map-marker-alt text-emerald-400"></i>
+            <span>{t.about.location}</span>
+          </div>
+
+          <div class="flex items-center gap-3 text-gray-400">
+            <i class="fas fa-language text-emerald-400"></i>
+            <span>English (B1) & Spanish (Native)</span>
+          </div>
+
+          <div class="flex items-center gap-3 text-gray-400">
+            <i class="fas fa-rocket text-emerald-400"></i>
+            <span>High-Performance Apps</span>
+          </div>
+
+          <div class="flex items-center gap-3 text-gray-400">
+            <i class="fas fa-users text-emerald-400"></i>
+            <span>Scrum & Agile</span>
+          </div>
         </div>
       </div>
     </div>
 
-    <!-- Tech Stack -->
-    <div class="max-w-6xl mx-auto">
-      <div class="space-y-6">
-        <div>
-          <h3 class="text-xl font-bold text-center mb-8">{t.about.skillsTitle}</h3>
+    <div class="tech-stack-section">
+      <div class="text-center mb-12">
+        <span class="text-emerald-400 text-sm font-mono mb-2 block">02.</span>
+        <h3 class="text-3xl sm:text-4xl font-bold mb-4">Tech Stack</h3>
+        <p class="text-gray-400">Technologies I work with</p>
+      </div>
 
-          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-
-          <div class="space-y-2">
-            <h4 class="text-lg font-semibold">{t.about.skillCategories.frontend}</h4>
-            <ul class="flex flex-wrap gap-4">
-              <li>
-                <i
-                  class="devicon-nextjs-plain text-black text-4xl tooltip"
-                  title="Next.js"></i>
-              </li>
-              <li>
-                <i
-                  class="devicon-angularjs-plain text-red-500 text-4xl tooltip"
-                  title="Angular"></i>
-              </li>
-              <li>
-                <i
-                  class="devicon-react-original text-blue-500 text-4xl tooltip"
-                  title="React"></i>
-              </li>
-              <li>
-                <i
-                  class="devicon-html5-plain text-orange-500 text-4xl tooltip"
-                  title="HTML5"></i>
-              </li>
-              <li>
-                <i
-                  class="devicon-css3-plain text-blue-500 text-4xl tooltip"
-                  title="CSS3"></i>
-              </li>
-              <li>
-                <i
-                  class="devicon-javascript-plain text-yellow-500 text-4xl tooltip"
-                  title="JavaScript"></i>
-              </li>
-              <li>
-                <i
-                  class="devicon-typescript-plain text-blue-400 text-4xl tooltip"
-                  title="TypeScript"></i>
-              </li>
-              <li>
-                <i
-                  class="devicon-bootstrap-plain text-purple-600 text-4xl tooltip"
-                  title="Bootstrap"></i>
-              </li>
-            </ul>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div
+          class="tech-category bg-slate-800/30 backdrop-blur-sm rounded-xl p-6 border border-slate-700/50 hover:border-emerald-500/50 transition-all duration-300"
+        >
+          <div class="flex items-center gap-3 mb-6">
+            <div
+              class="w-10 h-10 bg-blue-500/10 rounded-lg flex items-center justify-center"
+            >
+              <i class="fas fa-laptop-code text-blue-400 text-xl"></i>
+            </div>
+            <h4 class="text-xl font-semibold">Frontend</h4>
           </div>
-
-          <div class="space-y-2">
-            <h4 class="text-lg font-semibold">{t.about.skillCategories.backend}</h4>
-            <ul class="flex flex-wrap gap-4">
-              <li>
-                <i
-                  class="devicon-nodejs-plain-wordmark text-green-500 text-4xl tooltip"
-                  title="Node.js"></i>
-              </li>
-              <li>
-                <i
-                  class="devicon-express-original text-gray-500 text-4xl tooltip"
-                  title="Express.js"></i>
-              </li>
-              <li>
-                <i
-                  class="devicon-nestjs-plain text-red-500 text-4xl tooltip"
-                  title="NestJS"></i>
-              </li>
-              <li>
-                <i
-                  class="devicon-php-plain text-purple-500 text-4xl tooltip"
-                  title="PHP"></i>
-              </li>
-
-              <li>
-                <i
-                  class="devicon-laravel-plain text-red-600 text-4xl tooltip"
-                  title="Laravel"></i>
-              </li>
-              
-            </ul>
+          <div class="space-y-3">
+            {
+              techStack.frontend.map((tech) => (
+                <div class="flex items-center gap-3 group">
+                  <i
+                    class={`${tech.icon} ${tech.color} text-2xl group-hover:scale-110 transition-transform`}
+                  />
+                  <span class="text-gray-300 group-hover:text-white transition-colors">
+                    {tech.name}
+                  </span>
+                </div>
+              ))
+            }
           </div>
+        </div>
 
-          <div class="space-y-2">
-            <h4 class="text-lg font-semibold">{t.about.skillCategories.mobile}</h4>
-            <ul class="flex flex-wrap gap-4">
-              <li>
-                <i
-                  class="devicon-flutter-plain text-blue-400 text-4xl tooltip"
-                  title="Flutter"></i>
-              </li>
-              <li>
-                <i
-                  class="devicon-dart-plain text-blue-500 text-4xl tooltip"
-                  title="Dart"></i>
-              </li>
-            </ul>
+        <div
+          class="tech-category bg-slate-800/30 backdrop-blur-sm rounded-xl p-6 border border-slate-700/50 hover:border-emerald-500/50 transition-all duration-300"
+        >
+          <div class="flex items-center gap-3 mb-6">
+            <div
+              class="w-10 h-10 bg-green-500/10 rounded-lg flex items-center justify-center"
+            >
+              <i class="fas fa-server text-green-400 text-xl"></i>
+            </div>
+            <h4 class="text-xl font-semibold">Backend</h4>
           </div>
-
-          <div class="space-y-2">
-            <h4 class="text-lg font-semibold">{t.about.skillCategories.orm}</h4>
-            <ul class="flex flex-wrap gap-4">
-              <li>
-                <i
-                  class="devicon-sequelize-plain text-blue-700 text-4xl tooltip"
-                  title="Sequelize"></i>
-              </li>
-              <li>
-                <i
-                  class="devicon-prisma-plain text-black-500 text-4xl tooltip"
-                  title="Prisma"></i>
-              </li>
-            </ul>
+          <div class="space-y-3">
+            {
+              techStack.backend.map((tech) => (
+                <div class="flex items-center gap-3 group">
+                  <i
+                    class={`${tech.icon} ${tech.color} text-2xl group-hover:scale-110 transition-transform`}
+                  />
+                  <span class="text-gray-300 group-hover:text-white transition-colors">
+                    {tech.name}
+                  </span>
+                </div>
+              ))
+            }
           </div>
+        </div>
 
-          <div class="space-y-2">
-            <h4 class="text-lg font-semibold">{t.about.skillCategories.databases}</h4>
-            <ul class="flex flex-wrap gap-4">
-                <li>
-                <i
-                  class="devicon-mariadb-plain text-blue-500 text-4xl tooltip"
-                  title="MariaDB"></i>
-                </li>
-              <li>
-                <i
-                  class="devicon-postgresql-plain text-blue-700 text-4xl tooltip"
-                  title="PostgreSQL"></i>
-              </li>
-              <li>
-                <i
-                  class="devicon-mongodb-plain text-green-500 text-4xl tooltip"
-                  title="MongoDB"></i>
-              </li>
-              <li>
-                <i
-                  class="devicon-oracle-original text-red-500 text-4xl tooltip"
-                  title="Oracle"></i>
-              </li>
-              <li>
-                <i
-                  class="devicon-supabase-plain text-green-500 text-4xl tooltip"
-                  title="Supabase"></i>
-              </li>
-            </ul>
+        <div
+          class="tech-category bg-slate-800/30 backdrop-blur-sm rounded-xl p-6 border border-slate-700/50 hover:border-emerald-500/50 transition-all duration-300"
+        >
+          <div class="flex items-center gap-3 mb-6">
+            <div
+              class="w-10 h-10 bg-purple-500/10 rounded-lg flex items-center justify-center"
+            >
+              <i class="fas fa-database text-purple-400 text-xl"></i>
+            </div>
+            <h4 class="text-xl font-semibold">Database</h4>
           </div>
-
-          <div class="space-y-2">
-            <h4 class="text-lg font-semibold">{t.about.skillCategories.devops}</h4>
-            <ul class="flex flex-wrap gap-4">
-              <li>
-                <i
-                  class="devicon-amazonwebservices-plain-wordmark text-orange-400 text-4xl tooltip"
-                  title="AWS"></i>
-              </li>
-              <li>
-                <i
-                  class="devicon-googlecloud-plain text-blue-500 text-4xl tooltip"
-                  title="Google Cloud Platform"></i>
-              </li>
-              <li>
-                <i
-                  class="devicon-vercel-original text-black-900 text-4xl tooltip"
-                  title="Vercel"></i>
-              </li>
-              <li>
-                <i
-                  class="devicon-git-plain text-red-500 text-4xl tooltip"
-                  title="Git"></i>
-              </li>
-              <li>
-                <i
-                  class="devicon-github-original text-gray-700 text-4xl tooltip"
-                  title="GitHub"></i>
-              </li>
-              <li>
-                <i
-                  class="devicon-circleci-plain text-green-500 text-4xl tooltip"
-                  title="GitHub Actions"></i>
-              </li>
-              <li>
-                <i
-                  class="devicon-docker-plain text-blue-500 text-4xl tooltip"
-                  title="Docker"></i>
-              </li>
-            </ul>
+          <div class="space-y-3">
+            {
+              techStack.database.map((tech) => (
+                <div class="flex items-center gap-3 group">
+                  <i
+                    class={`${tech.icon} ${tech.color} text-2xl group-hover:scale-110 transition-transform`}
+                  />
+                  <span class="text-gray-300 group-hover:text-white transition-colors">
+                    {tech.name}
+                  </span>
+                </div>
+              ))
+            }
           </div>
+        </div>
 
-          <div class="space-y-2">
-            <h4 class="text-lg font-semibold">
-              {t.about.skillCategories.infra}
-            </h4>
-            <ul class="flex flex-wrap gap-4">
-              <li>
-                <i
-                  class="devicon-ubuntu-plain text-orange-600 text-4xl tooltip"
-                  title="Ubuntu"></i>
-              </li>
-              <li>
-                <i
-                  class="devicon-windows8-original text-blue-400 text-4xl tooltip"
-                  title="Windows Server"></i>
-              </li>
-            </ul>
+        <div
+          class="tech-category bg-slate-800/30 backdrop-blur-sm rounded-xl p-6 border border-slate-700/50 hover:border-emerald-500/50 transition-all duration-300"
+        >
+          <div class="flex items-center gap-3 mb-6">
+            <div
+              class="w-10 h-10 bg-orange-500/10 rounded-lg flex items-center justify-center"
+            >
+              <i class="fas fa-tools text-orange-400 text-xl"></i>
+            </div>
+            <h4 class="text-xl font-semibold">Tools</h4>
           </div>
-
-          <div class="space-y-2">
-            <h4 class="text-lg font-semibold">{t.about.skillCategories.collaboration}</h4>
-            <ul class="flex flex-wrap gap-4">
-              <li>
-                <i
-                  class="devicon-slack-plain text-purple-700 text-4xl tooltip"
-                  title="Slack"></i>
-              </li>
-              <li>
-                <i
-                  class="devicon-jira-plain text-blue-600 text-4xl tooltip"
-                  title="Jira"></i>
-              </li>
-              <li>
-                <i
-                  class="devicon-trello-plain text-blue-400 text-4xl tooltip"
-                  title="Trello"></i>
-              </li>
-              <li>
-                <i
-                  class="devicon-github-original text-gray-700 text-4xl tooltip"
-                  title="GitHub Projects"></i>
-              </li>
-            </ul>
+          <div class="space-y-3">
+            {
+              techStack.tools.map((tech) => (
+                <div class="flex items-center gap-3 group">
+                  <i
+                    class={`${tech.icon} ${tech.color} text-2xl group-hover:scale-110 transition-transform`}
+                  />
+                  <span class="text-gray-300 group-hover:text-white transition-colors">
+                    {tech.name}
+                  </span>
+                </div>
+              ))
+            }
           </div>
-
-          <div class="space-y-2">
-            <h4 class="text-lg font-semibold">{t.about.skillCategories.design}</h4>
-            <ul class="flex flex-wrap gap-4">
-              <li>
-                <i
-                  class="devicon-figma-plain text-pink-500 text-4xl tooltip"
-                  title="Figma"></i>
-              </li>
-              <li>
-                <i
-                  class="devicon-canva-plain text-blue-500 text-4xl tooltip"
-                  title="Canva"></i>
-              </li>
-            </ul>
         </div>
       </div>
     </div>
   </div>
+
+  <script>
+    import { gsap } from "gsap";
+    import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+    gsap.registerPlugin(ScrollTrigger);
+
+    document.addEventListener("DOMContentLoaded", () => {
+      gsap.from(".about-header", {
+        scrollTrigger: {
+          trigger: ".about-header",
+          start: "top 80%",
+        },
+        opacity: 0,
+        y: 30,
+        duration: 0.8,
+        ease: "power3.out",
+      });
+
+      gsap.from(".terminal-container", {
+        scrollTrigger: {
+          trigger: ".terminal-container",
+          start: "top 80%",
+        },
+        opacity: 0,
+        x: -50,
+        duration: 1,
+        ease: "power3.out",
+      });
+
+      gsap.from(".about-content", {
+        scrollTrigger: {
+          trigger: ".about-content",
+          start: "top 80%",
+        },
+        opacity: 0,
+        x: 50,
+        duration: 1,
+        ease: "power3.out",
+      });
+
+      gsap.from(".tech-category", {
+        scrollTrigger: {
+          trigger: ".tech-stack-section",
+          start: "top 80%",
+        },
+        opacity: 0,
+        y: 30,
+        duration: 0.6,
+        stagger: 0.15,
+        ease: "power3.out",
+      });
+    });
+  </script>
+
+  <style>
+    .blinking-cursor {
+      animation: blink 1s infinite;
+    }
+
+    @keyframes blink {
+      0%,
+      50% {
+        opacity: 1;
+      }
+      51%,
+      100% {
+        opacity: 0;
+      }
+    }
+  </style>
 </section>
