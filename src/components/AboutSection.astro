@@ -95,49 +95,53 @@ const techStack = {
             <div class="space-y-1">
               <div>
                 <span class="text-gray-500">→</span>
-                <span class="text-cyan-400">cat</span>
-                <span class="text-gray-300">bio.json</span>
+                <span class="text-cyan-400"
+                  >{t.about.terminal.command.split(" ")[0]}</span
+                >
+                <span class="text-gray-300"
+                  >{t.about.terminal.command.split(" ")[1]}</span
+                >
               </div>
               <div class="mt-4 text-gray-300">
-                <div>
-                  <span class="text-purple-400">{}</span>
-                  <div class="ml-4">
-                    <span class="text-emerald-400">"name"</span>: <span
-                      class="text-yellow-300">"Brayan Patiño"</span
-                    >,
-                  </div>
-                  <div class="ml-4">
-                    <span class="text-emerald-400">"role"</span>: <span
-                      class="text-yellow-300">"Systems Engineer"</span
-                    >,
-                  </div>
-                  <div class="ml-4">
-                    <span class="text-emerald-400">"location"</span>: <span
-                      class="text-yellow-300">"Ibagué, Colombia"</span
-                    >,
-                  </div>
-                  <div class="ml-4">
-                    <span class="text-emerald-400">"passion"</span>: <span
-                      class="text-yellow-300"
-                      >"Building high-impact digital products"</span
-                    >,
-                  </div>
-                  <div class="ml-4">
-                    <span class="text-emerald-400">"focus"</span>: <span
-                      class="text-purple-400">[</span
-                    ><span class="text-yellow-300">"Agile Development"</span>, <span
-                      class="text-yellow-300">"Scalability"</span
-                    >, <span class="text-yellow-300">"Innovation"</span><span
-                      class="text-purple-400">]</span
-                    >,
-                  </div>
-                  <div class="ml-4">
-                    <span class="text-emerald-400">"status"</span>: <span
-                      class="text-yellow-300"
-                      >"Currently automating processes at GanaGana"</span>
-                  </div>
-                  <div><span class="text-purple-400"></span></div>
+                <div><span class="text-purple-400">{"{"}</span></div>
+                <div class="ml-4">
+                  <span class="text-emerald-400">"name"</span>: <span
+                    class="text-yellow-300">"{t.about.terminal.name}"</span
+                  >,
                 </div>
+                <div class="ml-4">
+                  <span class="text-emerald-400">"role"</span>: <span
+                    class="text-yellow-300">"{t.about.terminal.role}"</span
+                  >,
+                </div>
+                <div class="ml-4">
+                  <span class="text-emerald-400">"location"</span>: <span
+                    class="text-yellow-300">"{t.about.terminal.location}"</span
+                  >,
+                </div>
+                <div class="ml-4">
+                  <span class="text-emerald-400">"passion"</span>: <span
+                    class="text-yellow-300">"{t.about.terminal.passion}"</span
+                  >,
+                </div>
+                <div class="ml-4">
+                  <span class="text-emerald-400">"focus"</span>: <span
+                    class="text-purple-400">[</span
+                  >{
+                    t.about.terminal.focus
+                      .map(
+                        (item, i) =>
+                          `<span class="text-yellow-300">"${item}"</span>${i < t.about.terminal.focus.length - 1 ? ", " : ""}`,
+                      )
+                      .join("")
+                  }<span class="text-purple-400">]</span>,
+                </div>
+                <div class="ml-4">
+                  <span class="text-emerald-400">"status"</span>: <span
+                    class="text-yellow-300">"{t.about.terminal.status}"</span
+                  >
+                </div>
+                <div><span class="text-purple-400">{"}"}</span></div>
               </div>
               <div class="mt-4">
                 <span class="text-gray-500">→</span>
@@ -161,17 +165,17 @@ const techStack = {
 
           <div class="flex items-center gap-3 text-gray-400">
             <i class="fas fa-language text-emerald-400"></i>
-            <span>English (B1) & Spanish (Native)</span>
+            <span>{t.about.languages}</span>
           </div>
 
           <div class="flex items-center gap-3 text-gray-400">
             <i class="fas fa-rocket text-emerald-400"></i>
-            <span>High-Performance Apps</span>
+            <span>{t.about.highPerformance}</span>
           </div>
 
           <div class="flex items-center gap-3 text-gray-400">
             <i class="fas fa-users text-emerald-400"></i>
-            <span>Scrum & Agile</span>
+            <span>{t.about.agile}</span>
           </div>
         </div>
       </div>
@@ -180,8 +184,10 @@ const techStack = {
     <div class="tech-stack-section">
       <div class="text-center mb-12">
         <span class="text-emerald-400 text-sm font-mono mb-2 block">02.</span>
-        <h3 class="text-3xl sm:text-4xl font-bold mb-4">Tech Stack</h3>
-        <p class="text-gray-400">Technologies I work with</p>
+        <h3 class="text-3xl sm:text-4xl font-bold mb-4">
+          {t.about.techStack.title}
+        </h3>
+        <p class="text-gray-400">{t.about.techStack.subtitle}</p>
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -194,7 +200,9 @@ const techStack = {
             >
               <i class="fas fa-laptop-code text-blue-400 text-xl"></i>
             </div>
-            <h4 class="text-xl font-semibold">Frontend</h4>
+            <h4 class="text-xl font-semibold">
+              {t.about.techStack.categories.frontend}
+            </h4>
           </div>
           <div class="space-y-3">
             {
@@ -221,7 +229,9 @@ const techStack = {
             >
               <i class="fas fa-server text-green-400 text-xl"></i>
             </div>
-            <h4 class="text-xl font-semibold">Backend</h4>
+            <h4 class="text-xl font-semibold">
+              {t.about.techStack.categories.backend}
+            </h4>
           </div>
           <div class="space-y-3">
             {
@@ -248,7 +258,9 @@ const techStack = {
             >
               <i class="fas fa-database text-purple-400 text-xl"></i>
             </div>
-            <h4 class="text-xl font-semibold">Database</h4>
+            <h4 class="text-xl font-semibold">
+              {t.about.techStack.categories.database}
+            </h4>
           </div>
           <div class="space-y-3">
             {
@@ -275,7 +287,9 @@ const techStack = {
             >
               <i class="fas fa-tools text-orange-400 text-xl"></i>
             </div>
-            <h4 class="text-xl font-semibold">Tools</h4>
+            <h4 class="text-xl font-semibold">
+              {t.about.techStack.categories.tools}
+            </h4>
           </div>
           <div class="space-y-3">
             {
@@ -307,45 +321,56 @@ const techStack = {
         scrollTrigger: {
           trigger: ".about-header",
           start: "top 80%",
+          toggleActions: "play none none none",
         },
         opacity: 0,
         y: 30,
         duration: 0.8,
         ease: "power3.out",
+        clearProps: "all",
       });
 
       gsap.from(".terminal-container", {
         scrollTrigger: {
           trigger: ".terminal-container",
           start: "top 80%",
+          toggleActions: "play none none none",
         },
         opacity: 0,
         x: -50,
         duration: 1,
         ease: "power3.out",
+        clearProps: "all",
       });
 
       gsap.from(".about-content", {
         scrollTrigger: {
           trigger: ".about-content",
           start: "top 80%",
+          toggleActions: "play none none none",
         },
         opacity: 0,
         x: 50,
         duration: 1,
         ease: "power3.out",
+        clearProps: "all",
       });
 
-      gsap.from(".tech-category", {
-        scrollTrigger: {
-          trigger: ".tech-stack-section",
-          start: "top 80%",
-        },
-        opacity: 0,
-        y: 30,
-        duration: 0.6,
-        stagger: 0.15,
-        ease: "power3.out",
+      const techCategories = gsap.utils.toArray(".tech-category") as Element[];
+      techCategories.forEach((category, index) => {
+        gsap.from(category, {
+          scrollTrigger: {
+            trigger: category,
+            start: "top 85%",
+            toggleActions: "play none none none",
+          },
+          opacity: 0,
+          y: 30,
+          duration: 0.6,
+          delay: index * 0.1,
+          ease: "power3.out",
+          clearProps: "all",
+        });
       });
     });
   </script>
