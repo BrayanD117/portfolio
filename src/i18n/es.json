@@ -268,6 +268,7 @@
     "title": "Mis Proyectos",
     "subtitle": "Aquí están algunos de los proyectos en los que he trabajado.",
     "linkText": "Visitar Proyecto →",
+    "seeMore": "Ver más en GitHub",
     "list": [
       {
         "name": "MIRÓ",

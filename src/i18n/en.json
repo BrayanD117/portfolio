@@ -267,6 +267,7 @@
     "title": "My Projects",
     "subtitle": "Here are some of the projects I've worked on.",
     "linkText": "Visit Project →",
+    "seeMore": "See more on GitHub",
     "list": [
       {
         "name": "MIRÓ",
