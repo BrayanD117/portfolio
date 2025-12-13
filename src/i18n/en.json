@@ -13,7 +13,8 @@
     "altPhoto": "Brayan Patiño - Systems Engineer & Fullstack Developer",
     "buttonProjects": "View Projects",
     "buttonCV": "View CV",
-    "cvLink": "/cv-en.pdf"
+    "cvLink": "/cv-en.pdf",
+    "availableBadge": "Available for new projects"
   },
   "about": {
     "title": "About Me",
@@ -32,6 +33,28 @@
       "infra": "Infrastructure & Operating Systems",
       "collaboration": "Collaboration & Management",
       "design": "Design & Tools"
+    },
+    "terminal": {
+      "command": "cat bio.json",
+      "name": "Brayan Patiño",
+      "role": "Systems Engineer",
+      "location": "Ibagué, Colombia",
+      "passion": "Building high-impact digital products",
+      "focus": ["Agile Development", "Scalability", "Innovation"],
+      "status": "Currently automating processes at GanaGana"
+    },
+    "languages": "English (B1) & Spanish (Native)",
+    "highPerformance": "High-Performance Apps",
+    "agile": "Scrum & Agile",
+    "techStack": {
+      "title": "Tech Stack",
+      "subtitle": "Technologies I work with",
+      "categories": {
+        "frontend": "Frontend",
+        "backend": "Backend",
+        "database": "Database",
+        "tools": "Tools"
+      }
     }
   },
   "education": {
@@ -244,6 +267,7 @@
     "title": "My Projects",
     "subtitle": "Here are some of the projects I've worked on.",
     "linkText": "Visit Project →",
+    "seeMore": "See more on GitHub",
     "list": [
       {
         "name": "MIRÓ",

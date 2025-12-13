@@ -1,60 +1,170 @@
 ---
-import Carousel from "../components/Carousel/Carousel.astro";
-import { Image } from "astro:assets";
 import en from "../i18n/en.json";
 import es from "../i18n/es.json";
+
 const locale = Astro.currentLocale;
-const t = locale === 'es' ? es : en;
+const t = locale === "es" ? es : en;
 ---
 
-<section id="projects" class="bg-gradient-to-br from-slate-700 to-slate-900 py-16 reveal">
-  <div class="container mx-auto px-6 sm:px-12 space-y-16">
-    <div class="text-center">
-      <h2 class="text-3xl sm:text-4xl font-bold text-white">{t.projects.title}</h2>
-      <p class="mt-4 text-lg text-gray-300">{t.projects.subtitle}</p>
+<section
+  id="projects"
+  class="relative bg-gradient-to-br from-[#1e293b] via-[#0f172a] to-[#1e293b] text-white py-24 overflow-hidden projects-section"
+>
+  <div
+    class="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(16,185,129,0.05),transparent_50%)]"
+  >
+  </div>
+
+  <div class="container mx-auto px-6 sm:px-12 relative z-10">
+    <div class="text-center mb-20 projects-header">
+      <span class="text-emerald-400 text-sm font-mono mb-2 block">05.</span>
+      <h2 class="text-4xl sm:text-5xl font-bold mb-4">{t.projects.title}</h2>
+      <p class="text-gray-400 max-w-2xl mx-auto">{t.projects.subtitle}</p>
+      <div
+        class="w-20 h-1 bg-gradient-to-r from-emerald-400 to-cyan-400 mx-auto mt-6"
+      >
+      </div>
     </div>
 
-    {t.projects.list.map((project, index) => (
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
-        <div class:list={["space-y-4", { "lg:order-2": index % 2 !== 0 }]}>
-          <div class="flex flex-wrap items-center space-x-4 mb-6">
-            <h3 class="text-2xl font-bold text-white">{project.name}</h3>
-            <Image
-              src={project.logo.src}
-              alt={project.logo.alt}
-              class="w-12 h-auto"
-              width={48}
-              height={48}
-              loading="lazy"
-            />
-          </div>
-
-          <p class="text-lg text-gray-300">{project.description}</p>
-          
-          <div class="flex flex-wrap items-center space-x-4 mt-4">
-            {project.technologies.map(techClass => (
-              <i class:list={[techClass, "text-3xl"]} />
-            ))}
-          </div>
-
+    <div class="grid lg:grid-cols-2 gap-8 lg:gap-12">
+      {
+        t.projects.list.map((project, index) => (
           <a
             href={project.url}
             target="_blank"
             rel="noopener noreferrer"
-            class="inline-block text-blue-400 hover:text-blue-500 font-medium mt-4"
+            class={`group relative block bg-slate-800/50 backdrop-blur-md rounded-2xl overflow-hidden border border-slate-700/50 hover:border-emerald-500/50 transition-all duration-300 shadow-xl ${index % 2 === 0 ? "project-left" : "project-right"}`}
           >
-            {t.projects.linkText}
+            <div class="relative h-64 sm:h-72 overflow-hidden bg-slate-900">
+              <div class="absolute inset-0 bg-gradient-to-t from-slate-900 to-transparent opacity-60 z-10" />
+              {project.images && project.images[0] && (
+                <img
+                  src={project.images[0].src}
+                  alt={project.images[0].alt}
+                  class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700 ease-in-out"
+                  loading="lazy"
+                />
+              )}
+
+              <div class="absolute top-4 right-4 z-20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex gap-2">
+                <div class="w-10 h-10 bg-slate-800/80 backdrop-blur rounded-full flex items-center justify-center border border-slate-600 shadow-lg">
+                  <i class="fas fa-external-link-alt text-emerald-400" />
+                </div>
+              </div>
+            </div>
+
+            <div class="p-8 relative z-20">
+              <div class="flex justify-between items-start mb-4">
+                <h3 class="text-2xl font-bold text-white group-hover:text-emerald-400 transition-colors">
+                  {project.name}
+                </h3>
+                <i class="fas fa-arrow-right text-slate-600 group-hover:text-emerald-400 -rotate-45 group-hover:rotate-0 transition-all duration-300 transform translate-y-1" />
+              </div>
+
+              <p class="text-gray-400 mb-6 line-clamp-3 leading-relaxed">
+                {project.description}
+              </p>
+
+              <div class="flex flex-wrap gap-2 mt-auto">
+                {project.technologies.slice(0, 5).map((tech) => (
+                  <div
+                    class="flex items-center justify-center w-10 h-10 bg-slate-700/50 rounded-full border border-slate-600/50 group/tech relative"
+                    title={tech
+                      .replace("devicon-", "")
+                      .replace("-plain", "")
+                      .replace("-original", "")}
+                  >
+                    <i class={`${tech.split(" ")[0]} text-lg text-gray-300`} />
+                  </div>
+                ))}
+              </div>
+            </div>
           </a>
-        </div>
-        
-        <div class:list={["flex justify-center", { "lg:order-1": index % 2 !== 0 }]}>
-          <Carousel 
-            images={project.images} 
-            height="350px" 
-            autoplayDelay={4000 + index * 500} 
-          />
-        </div>
-      </div>
-    ))}
+        ))
+      }
+    </div>
+
+    <div class="mt-16 text-center projects-footer">
+      <a
+        href="https://github.com/BrayanD117"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="inline-flex items-center gap-2 px-6 py-3 bg-slate-800 hover:bg-slate-700 rounded-full border border-slate-700 hover:border-emerald-500 transition-all duration-300 group"
+      >
+        <i class="fab fa-github text-xl"></i>
+        <span>{t.projects.seeMore}</span>
+        <i
+          class="fas fa-arrow-right group-hover:translate-x-1 transition-transform"
+        ></i>
+      </a>
+    </div>
   </div>
+
+  <script>
+    import { gsap } from "gsap";
+    import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+    gsap.registerPlugin(ScrollTrigger);
+
+    document.addEventListener("DOMContentLoaded", () => {
+      gsap.from(".projects-header", {
+        scrollTrigger: {
+          trigger: ".projects-header",
+          start: "top 80%",
+          toggleActions: "play none none none",
+        },
+        opacity: 0,
+        y: 30,
+        duration: 0.8,
+        ease: "power3.out",
+        clearProps: "all",
+      });
+
+      const leftProjects = gsap.utils.toArray(".project-left");
+      leftProjects.forEach((card: any) => {
+        gsap.from(card, {
+          scrollTrigger: {
+            trigger: card,
+            start: "top 80%",
+            toggleActions: "play none none none",
+          },
+          opacity: 0,
+          x: -50,
+          duration: 1,
+          ease: "power3.out",
+          clearProps: "all",
+        });
+      });
+
+      const rightProjects = gsap.utils.toArray(".project-right");
+      rightProjects.forEach((card: any) => {
+        gsap.from(card, {
+          scrollTrigger: {
+            trigger: card,
+            start: "top 80%",
+            toggleActions: "play none none none",
+          },
+          opacity: 0,
+          x: 50,
+          duration: 1,
+          ease: "power3.out",
+          delay: 0.2,
+          clearProps: "all",
+        });
+      });
+
+      gsap.from(".projects-footer", {
+        scrollTrigger: {
+          trigger: "#projects",
+          start: "bottom 90%",
+          toggleActions: "play none none none",
+        },
+        opacity: 0,
+        y: 20,
+        duration: 0.8,
+        delay: 0.5,
+        clearProps: "all",
+      });
+    });
+  </script>
 </section>

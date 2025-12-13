@@ -2,27 +2,153 @@
 import en from "../i18n/en.json";
 import es from "../i18n/es.json";
 const locale = Astro.currentLocale;
-const t = locale === 'es' ? es : en;
+const t = locale === "es" ? es : en;
+
+const currentYear = new Date().getFullYear();
 ---
 
-<footer class="bg-gray-800 text-gray-400 py-6 text-center">
-  <p set:html={t.footer.copyright} />
-  <div class="flex justify-center space-x-4 mt-2">
-    <a
-      href="https://github.com/BrayanD117"
-      target="_blank"
-      rel="noopener noreferrer"
-      aria-label={t.footer.ariaGithub}
-    >
-      <i class="fab fa-github text-2xl hover:text-white"></i>
-    </a>
-    <a
-      href="https://www.linkedin.com/in/brayan-pati%C3%B1o-07a995220/"
-      target="_blank"
-      rel="noopener noreferrer"
-      aria-label={t.footer.ariaLinkedin}
-    >
-      <i class="fab fa-linkedin text-2xl hover:text-white"></i>
-    </a>
+<footer
+  class="relative bg-gradient-to-br from-[#0a0f1e] via-[#0f172a] to-[#0a0f1e] text-gray-400 py-12 overflow-hidden border-t border-slate-800/50"
+>
+  <div
+    class="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(16,185,129,0.03),transparent_50%)]"
+  >
   </div>
+
+  <div class="container mx-auto px-6 sm:px-12 relative z-10">
+    <div class="flex flex-col items-center space-y-6">
+      <div class="flex space-x-6 footer-social">
+        <a
+          href="https://github.com/BrayanD117"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label={t.footer.ariaGithub}
+          class="group"
+        >
+          <div
+            class="w-12 h-12 bg-slate-800/50 backdrop-blur-sm rounded-lg border border-slate-700 flex items-center justify-center hover:border-emerald-500/50 transition-all duration-300 hover:bg-slate-700/50"
+          >
+            <i
+              class="fab fa-github text-xl text-gray-400 group-hover:text-emerald-400 group-hover:scale-110 transition-all duration-300"
+            ></i>
+          </div>
+        </a>
+
+        <a
+          href="https://www.linkedin.com/in/brayan-pati%C3%B1o-07a995220/"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label={t.footer.ariaLinkedin}
+          class="group"
+        >
+          <div
+            class="w-12 h-12 bg-slate-800/50 backdrop-blur-sm rounded-lg border border-slate-700 flex items-center justify-center hover:border-blue-500/50 transition-all duration-300 hover:bg-slate-700/50"
+          >
+            <i
+              class="fab fa-linkedin text-xl text-gray-400 group-hover:text-blue-400 group-hover:scale-110 transition-all duration-300"
+            ></i>
+          </div>
+        </a>
+
+        <a
+          href="mailto:brayandavid1928@gmail.com"
+          aria-label="Email"
+          class="group"
+        >
+          <div
+            class="w-12 h-12 bg-slate-800/50 backdrop-blur-sm rounded-lg border border-slate-700 flex items-center justify-center hover:border-red-500/50 transition-all duration-300 hover:bg-slate-700/50"
+          >
+            <i
+              class="fas fa-envelope text-xl text-gray-400 group-hover:text-red-400 group-hover:scale-110 transition-all duration-300"
+            ></i>
+          </div>
+        </a>
+      </div>
+
+      <div class="text-center space-y-2 footer-text">
+        <p
+          class="text-sm font-mono text-gray-500"
+          set:html={t.footer.copyright}
+        />
+      </div>
+
+      <div
+        class="w-16 h-1 bg-gradient-to-r from-emerald-400 to-cyan-400 rounded-full footer-line"
+      >
+      </div>
+    </div>
+  </div>
+
+  <script>
+    import { gsap } from "gsap";
+    import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+    gsap.registerPlugin(ScrollTrigger);
+
+    let ctx: gsap.Context | null = null;
+
+    const initAnimations = () => {
+      if (ctx) {
+        ctx.revert();
+        ctx = null;
+      }
+
+      setTimeout(() => {
+        ctx = gsap.context(() => {
+          gsap.from(".footer-social", {
+            scrollTrigger: {
+              trigger: "footer",
+              start: "top 90%",
+              toggleActions: "play none none none",
+            },
+            opacity: 0,
+            y: 20,
+            duration: 0.6,
+            ease: "power2.out",
+          });
+
+          gsap.from(".footer-text", {
+            scrollTrigger: {
+              trigger: "footer",
+              start: "top 90%",
+              toggleActions: "play none none none",
+            },
+            opacity: 0,
+            y: 10,
+            duration: 0.6,
+            delay: 0.1,
+            ease: "power2.out",
+          });
+
+          gsap.from(".footer-line", {
+            scrollTrigger: {
+              trigger: "footer",
+              start: "top 90%",
+              toggleActions: "play none none none",
+            },
+            scaleX: 0,
+            duration: 0.8,
+            delay: 0.2,
+            ease: "power2.out",
+          });
+        });
+
+        ScrollTrigger.refresh();
+      }, 100);
+    };
+
+    if (document.readyState === "loading") {
+      document.addEventListener("DOMContentLoaded", initAnimations);
+    } else {
+      initAnimations();
+    }
+
+    document.addEventListener("astro:page-load", initAnimations);
+    document.addEventListener("astro:after-swap", () => {
+      if (ctx) {
+        ctx.revert();
+        ctx = null;
+      }
+    });
+  </script>
 </footer>

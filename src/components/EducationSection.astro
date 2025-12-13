@@ -1,32 +1,106 @@
 ---
-import '../components/styles/EducationSection.css';
+import "../components/styles/EducationSection.css";
 import en from "../i18n/en.json";
 import es from "../i18n/es.json";
 const locale = Astro.currentLocale;
 const t = locale === 'es' ? es : en;
 ---
 
-<section id="education" class="education-section py-16 reveal">
-  <div class="container mx-auto px-6 sm:px-12">
-    <h2 class="text-4xl sm:text-4xl font-bold text-center mb-12">{t.education.title}</h2>
-    <div class="timeline-container">
-      {t.education.timeline.map(item => (
-        <div class="timeline-item">
-          <div class="timeline-icon">
-            <i class={`fas ${/Ingeniero|Engineer/.test(item.degree) ? 'fa-graduation-cap' : 'fa-award'}`}></i>
+<section id="education" class="relative bg-gradient-to-br from-[#0f172a] via-[#1e293b] to-[#0f172a] text-white overflow-hidden py-24 education-section">
+  <div class="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(16,185,129,0.05),transparent_50%)]"></div>
+
+  <div class="container mx-auto px-6 sm:px-12 relative z-10">
+    <div class="text-center mb-20 education-header">
+      <span class="text-emerald-400 text-sm font-mono mb-2 block">03.</span>
+      <h2 class="text-4xl sm:text-5xl font-bold mb-4">{t.education.title}</h2>
+      <div class="w-20 h-1 bg-gradient-to-r from-emerald-400 to-cyan-400 mx-auto"></div>
+    </div>
+
+    <div class="grid lg:grid-cols-2 gap-8 lg:gap-12 relative">
+      {t.education.timeline.map((item, index) => (
+        <div class={`education-card bg-slate-800/50 backdrop-blur-md p-8 sm:p-10 rounded-2xl border border-slate-700/50 shadow-2xl relative overflow-hidden group hover:border-emerald-500/30 transition-all duration-300 ${index % 2 === 0 ? 'card-left' : 'card-right'}`}>
+          <!-- Background Icon -->
+          <div class="absolute -right-6 -bottom-6 opacity-5 group-hover:opacity-10 transition-all duration-500 transform group-hover:scale-110 rotate-12">
+            <i class={`fas ${/Ingeniero|Engineer/.test(item.degree) ? 'fa-graduation-cap' : 'fa-laptop-code'} text-9xl text-emerald-400`}></i>
           </div>
-          <div class="timeline-content">
-            <h3 class="text-2xl font-bold">{item.degree}</h3>
-            <p class="text-lg font-semibold text-blue-500">{item.institution}</p>
-            {item.date && (
-              <span class="text-md text-gray-500">{item.date}</span>
-            )}
-            {item.description.map(paragraph => (
-              <p class="mt-2">{paragraph}</p>
-            ))}
+
+          <div class="relative z-10">
+            <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-6 gap-4">
+               <span class="text-5xl sm:text-6xl font-bold text-slate-700/50 font-mono">0{index + 1}</span>
+               <span class="px-4 py-2 bg-emerald-500/10 text-emerald-400 rounded-full text-sm font-mono border border-emerald-500/30 whitespace-nowrap">
+                  {item.date || "Completed"}
+               </span>
+            </div>
+            
+            <h3 class="text-2xl sm:text-3xl font-bold mb-4 text-white group-hover:text-emerald-400 transition-colors">{item.degree}</h3>
+            
+            <div class="flex items-center gap-3 mb-6 text-cyan-400 text-lg">
+              <i class="fas fa-university"></i>
+              <span class="font-medium">{item.institution}</span>
+            </div>
+
+            <div class="space-y-3 text-gray-300">
+              {item.description.map(paragraph => (
+                <p class="leading-relaxed border-l-2 border-slate-700 pl-4 group-hover:border-emerald-500/50 transition-colors">{paragraph}</p>
+              ))}
+            </div>
           </div>
         </div>
       ))}
     </div>
   </div>
+
+  <script>
+    import { gsap } from "gsap";
+    import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+    gsap.registerPlugin(ScrollTrigger);
+
+    document.addEventListener("DOMContentLoaded", () => {
+      gsap.from(".education-header", {
+        scrollTrigger: {
+          trigger: ".education-header",
+          start: "top 80%",
+          toggleActions: "play none none none"
+        },
+        opacity: 0,
+        y: 30,
+        duration: 1,
+        ease: "power2.out",
+        clearProps: "all"
+      });
+
+      const leftCards = gsap.utils.toArray(".card-left");
+      leftCards.forEach((card: any) => {
+        gsap.from(card, {
+          scrollTrigger: {
+            trigger: card,
+            start: "top 80%",
+            toggleActions: "play none none none"
+          },
+          opacity: 0,
+          x: -50,
+          duration: 1,
+          ease: "power3.out",
+          clearProps: "all"
+        });
+      });
+
+      const rightCards = gsap.utils.toArray(".card-right");
+      rightCards.forEach((card: any) => {
+        gsap.from(card, {
+          scrollTrigger: {
+            trigger: card,
+            start: "top 80%",
+            toggleActions: "play none none none"
+          },
+          opacity: 0,
+          x: 50, 
+          duration: 1,
+          ease: "power3.out",
+          clearProps: "all"
+        });
+      });
+    });
+  </script>
 </section>

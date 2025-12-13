@@ -13,69 +13,254 @@ const t = locale === "es" ? es : en;
 ---
 
 <section
-  class="bg-gradient-to-br from-slate-500 to-slate-900 text-white min-h-screen flex items-center"
+  id="home"
+  class="relative bg-gradient-to-br from-[#0f172a] via-[#1e293b] to-[#0f172a] text-white min-h-screen flex items-center overflow-hidden"
 >
   <div
-    class="container mx-auto px-6 sm:px-12 flex flex-col items-center justify-center text-center"
+    class="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(16,185,129,0.1),transparent_50%)]"
   >
-    <div class="mb-8">
-      <Image
-        src={personalPhoto}
-        alt={t.home.altPhoto}
-        class="rounded-full shadow-lg max-w-[200px] sm:max-w-[300px] md:max-w-[350px] lg:max-w-[400px] border border-gray-700 mx-auto"
-        loading="eager"
-        fetchpriority="high"
-        widths={[200, 300, 350, 400]}
-        sizes="(max-width: 640px) 200px, (max-width: 768px) 300px, (max-width: 1024px) 350px, 400px"
-        format="webp"
-      />
-    </div>
+  </div>
 
-    <div class="text-center space-y-6">
-      <h1 class="text-4xl sm:text-5xl font-bold">
-        {t.home.greeting}
-        <span class="text-blue-400">Brayan</span>
-      </h1>
-      <p class="text-2xl sm:text-2xl font-semibold">
-        {t.home.title}
-      </p>
-      <p class="text-lg sm:text-xl max-w-xl mx-auto">
-        {t.home.passion}{" "}
-        <span class="text-blue-400 custom-typewriter">
-          <Typewriter
-            client:only="react"
-            options={{
-              strings: t.home.typewriterStrings,
-              autoStart: true,
-              loop: true,
-              delay: 50,
-              deleteSpeed: 20,
-            }}
-          />
-        </span>
-      </p>
-      <div class="flex space-x-4 justify-center">
-        <a
-          href="#projects"
-          class="bg-blue-700 text-white px-6 py-2 rounded-lg hover:bg-blue-600 flex items-center space-x-2 transform transition-all duration-300 hover:scale-110 hover:shadow-xl hover:shadow-blue-500/25 active:scale-95"
+  <div class="container mx-auto px-6 sm:px-12 py-20 relative z-10">
+    <div class="grid lg:grid-cols-2 gap-12 items-center">
+      <div class="space-y-8 hero-content">
+        <div
+          class="inline-flex items-center gap-2 px-4 py-2 bg-emerald-500/10 border border-emerald-500/20 rounded-full availability-badge"
         >
-          <i class="fas fa-folder-open"></i>
-          <span>{t.home.buttonProjects}</span>
-        </a>
-        <a
-          href={t.home.cvLink}
-          target="_blank"
-          rel="noopener noreferrer"
-          class="bg-transparent border border-gray-300 px-6 py-2 rounded-lg text-gray-300 hover:bg-gray-300 hover:text-gray-900 flex items-center space-x-2 transform transition-all duration-300 hover:scale-110 hover:shadow-xl hover:shadow-gray-300/25 active:scale-95"
-        >
-          <i class="fas fa-eye"></i>
-          <span>{t.home.buttonCV}</span>
-        </a>
+          <span class="w-2 h-2 bg-emerald-400 rounded-full animate-pulse"
+          ></span>
+          <span class="text-sm text-emerald-400">{t.home.availableBadge}</span>
+        </div>
+
+        <div class="space-y-4">
+          <h1
+            class="text-5xl sm:text-6xl lg:text-7xl font-bold leading-tight hero-title"
+          >
+            {t.home.greeting}
+            <span
+              class="bg-gradient-to-r from-emerald-400 to-cyan-400 bg-clip-text text-transparent hero-name"
+            >
+              Brayan
+            </span>
+            <span class="text-emerald-400">.</span>
+          </h1>
+
+          <p class="text-xl sm:text-2xl text-gray-300 font-light hero-subtitle">
+            {t.home.title}
+          </p>
+        </div>
+
+        <p class="text-lg text-gray-400 max-w-2xl hero-description">
+          {t.home.passion}{" "}
+          <span class="text-emerald-400 font-medium">
+            <Typewriter
+              client:only="react"
+              options={{
+                strings: t.home.typewriterStrings,
+                autoStart: true,
+                loop: true,
+                delay: 50,
+                deleteSpeed: 20,
+              }}
+            />
+          </span>
+        </p>
+
+        <div class="flex flex-wrap gap-4 hero-buttons">
+          <a
+            href="#projects"
+            class="group relative px-8 py-4 bg-emerald-500 text-white rounded-lg font-medium overflow-hidden transition-all duration-300 hover:shadow-lg hover:shadow-emerald-500/50 hover:-translate-y-1"
+          >
+            <span class="relative z-10 flex items-center gap-2">
+              <i class="fas fa-folder-open"></i>
+              {t.home.buttonProjects}
+              <i
+                class="fas fa-arrow-down text-sm group-hover:translate-y-1 transition-transform"
+              ></i>
+            </span>
+          </a>
+
+          <a
+            href={t.home.cvLink}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="group px-8 py-4 bg-transparent border-2 border-gray-600 text-gray-300 rounded-lg font-medium hover:border-emerald-500 hover:text-emerald-400 transition-all duration-300 hover:-translate-y-1"
+          >
+            <span class="flex items-center gap-2">
+              <i class="fas fa-file-alt"></i>
+              {t.home.buttonCV}
+              <i class="fas fa-external-link-alt text-sm"></i>
+            </span>
+          </a>
+        </div>
+      </div>
+
+      <div class="relative hero-image-container">
+        <div class="relative">
+          <div
+            class="absolute -inset-4 bg-gradient-to-r from-emerald-500 to-cyan-500 rounded-full blur-2xl opacity-20 animate-pulse"
+          >
+          </div>
+
+          <div class="relative">
+            <Image
+              src={personalPhoto}
+              alt={t.home.altPhoto}
+              class="relative rounded-full shadow-2xl max-w-[300px] sm:max-w-[400px] lg:max-w-[500px] mx-auto border-4 border-emerald-500/20 hero-image"
+              loading="eager"
+              fetchpriority="high"
+              widths={[300, 400, 500]}
+              sizes="(max-width: 640px) 300px, (max-width: 1024px) 400px, 500px"
+              format="webp"
+            />
+          </div>
+
+          <div
+            class="tech-badge tech-badge-1 absolute top-10 -left-4 px-4 py-2 bg-slate-800/90 backdrop-blur-sm border border-emerald-500/30 rounded-lg shadow-lg"
+          >
+            <i class="devicon-react-original text-cyan-400 text-2xl"></i>
+            <span class="ml-2 text-sm text-gray-300">React</span>
+          </div>
+
+          <div
+            class="tech-badge tech-badge-2 absolute top-32 -right-8 px-4 py-2 bg-slate-800/90 backdrop-blur-sm border border-emerald-500/30 rounded-lg shadow-lg"
+          >
+            <i class="devicon-nodejs-plain text-green-400 text-2xl"></i>
+            <span class="ml-2 text-sm text-gray-300">Node.js</span>
+          </div>
+
+          <div
+            class="tech-badge tech-badge-3 absolute bottom-32 -left-8 px-4 py-2 bg-slate-800/90 backdrop-blur-sm border border-emerald-500/30 rounded-lg shadow-lg"
+          >
+            <i class="devicon-typescript-plain text-blue-400 text-2xl"></i>
+            <span class="ml-2 text-sm text-gray-300">TypeScript</span>
+          </div>
+
+          <div
+            class="tech-badge tech-badge-4 absolute bottom-10 -right-4 px-4 py-2 bg-slate-800/90 backdrop-blur-sm border border-emerald-500/30 rounded-lg shadow-lg"
+          >
+            <i class="devicon-postgresql-plain text-blue-300 text-2xl"></i>
+            <span class="ml-2 text-sm text-gray-300">PostgreSQL</span>
+          </div>
+        </div>
       </div>
     </div>
   </div>
+
   <script>
+    import { gsap } from "gsap";
+    import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+    gsap.registerPlugin(ScrollTrigger);
+
     document.addEventListener("DOMContentLoaded", () => {
+      const tl = gsap.timeline({ defaults: { ease: "power3.out" } });
+
+      tl.from(".availability-badge", {
+        opacity: 0,
+        y: -20,
+        duration: 0.6,
+      })
+        .from(
+          ".hero-title",
+          {
+            opacity: 0,
+            y: 30,
+            duration: 0.8,
+          },
+          "-=0.3",
+        )
+        .from(
+          ".hero-name",
+          {
+            opacity: 0,
+            scale: 0.8,
+            duration: 0.6,
+          },
+          "-=0.4",
+        )
+        .from(
+          ".hero-subtitle",
+          {
+            opacity: 0,
+            y: 20,
+            duration: 0.6,
+          },
+          "-=0.3",
+        )
+        .from(
+          ".hero-description",
+          {
+            opacity: 0,
+            y: 20,
+            duration: 0.6,
+          },
+          "-=0.3",
+        )
+        .from(
+          ".hero-buttons",
+          {
+            opacity: 0,
+            y: 20,
+            duration: 0.6,
+          },
+          "-=0.3",
+        )
+        .from(
+          ".hero-image",
+          {
+            opacity: 0,
+            scale: 0.8,
+            duration: 1,
+          },
+          "-=0.8",
+        )
+        .from(
+          ".tech-badge-1",
+          {
+            opacity: 0,
+            x: -50,
+            duration: 0.6,
+          },
+          "-=0.5",
+        )
+        .from(
+          ".tech-badge-2",
+          {
+            opacity: 0,
+            x: 50,
+            duration: 0.6,
+          },
+          "-=0.5",
+        )
+        .from(
+          ".tech-badge-3",
+          {
+            opacity: 0,
+            x: -50,
+            duration: 0.6,
+          },
+          "-=0.5",
+        )
+        .from(
+          ".tech-badge-4",
+          {
+            opacity: 0,
+            x: 50,
+            duration: 0.6,
+          },
+          "-=0.5",
+        );
+
+      gsap.to(".tech-badge", {
+        y: "random(-10, 10)",
+        duration: 2,
+        repeat: -1,
+        yoyo: true,
+        ease: "sine.inOut",
+        stagger: 0.2,
+      });
+
       const links = document.querySelectorAll('a[href^="#"]');
       links.forEach((link) => {
         link.addEventListener("click", (e) => {

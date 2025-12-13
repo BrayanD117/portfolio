@@ -2,99 +2,197 @@
 import en from "../i18n/en.json";
 import es from "../i18n/es.json";
 const locale = Astro.currentLocale;
-const t = locale === 'es' ? es : en;
+const t = locale === "es" ? es : en;
 ---
 
 <section
   id="contacto"
-  class="bg-gradient-to-br from-slate-100 to-slate-300 text-slate-900 py-16 reveal"
+  class="relative bg-gradient-to-br from-[#0f172a] via-[#1e293b] to-[#0f172a] text-white py-24 overflow-hidden contact-section"
 >
-  <div class="container mx-auto px-6 sm:px-12">
-    <h2 class="text-4xl font-bold text-center mb-8">{t.contact.title}</h2>
-    <p class="text-center text-lg text-slate-700 mb-12">
-      {t.contact.subtitle}
-    </p>
+  <div
+    class="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,rgba(16,185,129,0.05),transparent_60%)]"
+  >
+  </div>
+  <div
+    class="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,rgba(6,182,212,0.05),transparent_60%)]"
+  >
+  </div>
 
-    <div class="flex flex-wrap justify-center gap-8">
+  <div class="container mx-auto px-6 sm:px-12 relative z-10">
+    <div class="text-center mb-16 contact-header">
+      <span class="text-emerald-400 text-sm font-mono mb-2 block">06.</span>
+      <h2 class="text-4xl sm:text-5xl font-bold mb-4">{t.contact.title}</h2>
+      <div
+        class="w-20 h-1 bg-gradient-to-r from-emerald-400 to-cyan-400 mx-auto mb-6"
+      >
+      </div>
+      <p class="text-gray-400 text-lg max-w-2xl mx-auto">
+        {t.contact.subtitle}
+      </p>
+    </div>
+
+    <div class="flex flex-wrap justify-center gap-8 contact-links">
       <a
         href="https://www.linkedin.com/in/brayan-pati%C3%B1o-07a995220/"
         target="_blank"
         rel="noopener noreferrer"
-        class="flex flex-col items-center space-y-2 text-center transition-transform transform hover:scale-110"
+        class="contact-link group"
       >
         <div
-          class="bg-slate-200 p-4 rounded-full border-2 border-transparent hover:border-blue-500"
+          class="bg-slate-800/50 backdrop-blur-sm p-8 rounded-xl border border-slate-700 hover:border-blue-500/50 transition-all duration-300 shadow-xl flex flex-col items-center space-y-4"
         >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            class="h-10 w-10 text-slate-900"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-            stroke-width="2"
+          <div
+            class="w-16 h-16 bg-blue-500/10 rounded-lg flex items-center justify-center group-hover:bg-blue-500/20 transition-all duration-300"
           >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"
-            ></path>
-            <circle cx="4" cy="4" r="2"></circle>
-          </svg>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-8 w-8 text-blue-400 group-hover:scale-110 transition-transform duration-300"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"
+              ></path>
+              <circle cx="4" cy="4" r="2"></circle>
+            </svg>
+          </div>
+          <span
+            class="font-medium text-gray-300 group-hover:text-blue-400 transition-colors duration-300"
+            >{t.contact.links.linkedin}</span
+          >
         </div>
-        <span class="font-medium">{t.contact.links.linkedin}</span>
       </a>
 
       <a
         href="https://github.com/BrayanD117"
         target="_blank"
         rel="noopener noreferrer"
-        class="flex flex-col items-center space-y-2 text-center transition-transform transform hover:scale-110"
+        class="contact-link group"
       >
         <div
-          class="bg-slate-200 p-4 rounded-full border-2 border-transparent hover:border-gray-400"
+          class="bg-slate-800/50 backdrop-blur-sm p-8 rounded-xl border border-slate-700 hover:border-gray-400/50 transition-all duration-300 shadow-xl flex flex-col items-center space-y-4"
         >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            class="h-10 w-10 text-slate-900"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-            stroke-width="2"
+          <div
+            class="w-16 h-16 bg-gray-500/10 rounded-lg flex items-center justify-center group-hover:bg-gray-500/20 transition-all duration-300"
           >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0020 4.77 5.07 5.07 0 0019.91 1S18.73.65 16 2.48a13.38 13.38 0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 005 4.77a5.44 5.44 0 00-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 009 18.13V22"
-            ></path>
-          </svg>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-8 w-8 text-gray-300 group-hover:scale-110 transition-transform duration-300"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0020 4.77 5.07 5.07 0 0019.91 1S18.73.65 16 2.48a13.38 13.38 0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 005 4.77a5.44 5.44 0 00-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 009 18.13V22"
+              ></path>
+            </svg>
+          </div>
+          <span
+            class="font-medium text-gray-300 group-hover:text-gray-400 transition-colors duration-300"
+            >{t.contact.links.github}</span
+          >
         </div>
-        <span class="font-medium">{t.contact.links.github}</span>
       </a>
 
-      <a
-        href="mailto:brayandavid1928@gmail.com"
-        class="flex flex-col items-center space-y-2 text-center transition-transform transform hover:scale-110"
-      >
+      <a href="mailto:brayandavid1928@gmail.com" class="contact-link group">
         <div
-          class="bg-slate-200 p-4 rounded-full border-2 border-transparent hover:border-red-500"
+          class="bg-slate-800/50 backdrop-blur-sm p-8 rounded-xl border border-slate-700 hover:border-red-500/50 transition-all duration-300 shadow-xl flex flex-col items-center space-y-4"
         >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            class="h-10 w-10 text-slate-900"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-            stroke-width="2"
+          <div
+            class="w-16 h-16 bg-red-500/10 rounded-lg flex items-center justify-center group-hover:bg-red-500/20 transition-all duration-300"
           >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
-            ></path>
-          </svg>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-8 w-8 text-red-400 group-hover:scale-110 transition-transform duration-300"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+              ></path>
+            </svg>
+          </div>
+          <span
+            class="font-medium text-gray-300 group-hover:text-red-400 transition-colors duration-300"
+            >{t.contact.links.email}</span
+          >
         </div>
-        <span class="font-medium">{t.contact.links.email}</span>
       </a>
     </div>
   </div>
+
+  <script>
+    import { gsap } from "gsap";
+    import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+    gsap.registerPlugin(ScrollTrigger);
+
+    let ctx: gsap.Context | null = null;
+
+    const initAnimations = () => {
+      if (ctx) {
+        ctx.revert();
+        ctx = null;
+      }
+
+      setTimeout(() => {
+        ctx = gsap.context(() => {
+          gsap.from(".contact-header", {
+            scrollTrigger: {
+              trigger: ".contact-header",
+              start: "top 85%",
+              toggleActions: "play none none none",
+            },
+            opacity: 0,
+            y: 20,
+            duration: 0.6,
+            ease: "power2.out",
+          });
+
+          const links = document.querySelectorAll(".contact-link");
+          links.forEach((link, index) => {
+            gsap.from(link, {
+              scrollTrigger: {
+                trigger: link,
+                start: "top 85%",
+                toggleActions: "play none none none",
+              },
+              opacity: 0,
+              y: 30,
+              duration: 0.6,
+              delay: index * 0.1,
+              ease: "power2.out",
+            });
+          });
+        });
+
+        ScrollTrigger.refresh();
+      }, 100);
+    };
+
+    if (document.readyState === "loading") {
+      document.addEventListener("DOMContentLoaded", initAnimations);
+    } else {
+      initAnimations();
+    }
+
+    document.addEventListener("astro:page-load", initAnimations);
+    document.addEventListener("astro:after-swap", () => {
+      if (ctx) {
+        ctx.revert();
+        ctx = null;
+      }
+    });
+  </script>
 </section>

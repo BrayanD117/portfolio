@@ -13,7 +13,8 @@
     "altPhoto": "Brayan Patiño - Ingeniero de Sistemas & Desarrollador Fullstack",
     "buttonProjects": "Ver Proyectos",
     "buttonCV": "Ver CV",
-    "cvLink": "/cv-es.pdf"
+    "cvLink": "/cv-es.pdf",
+    "availableBadge": "Disponible para nuevos proyectos"
   },
   "about": {
     "title": "Sobre mí",
@@ -32,6 +33,28 @@
       "infra": "Infraestructura y Sistemas Operativos",
       "collaboration": "Colaboración y Gestión",
       "design": "Diseño y Herramientas"
+    },
+    "terminal": {
+      "command": "cat bio.json",
+      "name": "Brayan Patiño",
+      "role": "Ingeniero de Sistemas",
+      "location": "Ibagué, Colombia",
+      "passion": "Construir productos digitales de alto impacto",
+      "focus": ["Desarrollo Ágil", "Escalabilidad", "Innovación"],
+      "status": "Actualmente automatizando procesos en GanaGana"
+    },
+    "languages": "Inglés (B1) y Español (Nativo)",
+    "highPerformance": "Aplicaciones de Alto Rendimiento",
+    "agile": "Scrum y Ágil",
+    "techStack": {
+      "title": "Stack Tecnológico",
+      "subtitle": "Tecnologías con las que trabajo",
+      "categories": {
+        "frontend": "Frontend",
+        "backend": "Backend",
+        "database": "Base de Datos",
+        "tools": "Herramientas"
+      }
     }
   },
   "education": {
@@ -245,6 +268,7 @@
     "title": "Mis Proyectos",
     "subtitle": "Aquí están algunos de los proyectos en los que he trabajado.",
     "linkText": "Visitar Proyecto →",
+    "seeMore": "Ver más en GitHub",
     "list": [
       {
         "name": "MIRÓ",
