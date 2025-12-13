@@ -128,12 +128,12 @@ const techStack = {
                   <span class="text-emerald-400">"focus"</span>: <span
                     class="text-purple-400">[</span
                   >{
-                    t.about.terminal.focus
-                      .map(
-                        (item, i) =>
-                          `<span class="text-yellow-300">"${item}"</span>${i < t.about.terminal.focus.length - 1 ? ", " : ""}`,
-                      )
-                      .join("")
+                    t.about.terminal.focus.map((item: string, i: number) => (
+                      <>
+                        <span class="text-yellow-300">"{item}"</span>
+                        {i < t.about.terminal.focus.length - 1 ? ", " : ""}
+                      </>
+                    ))
                   }<span class="text-purple-400">]</span>,
                 </div>
                 <div class="ml-4">
